@@ -615,20 +615,26 @@ footer p{font-size:11px;color:#555;letter-spacing:.04em}
 <div class="mobile-nav" id="mobileNav">
   <a href="#about" onclick="closeMobile()">About</a>
   <a href="#work" onclick="closeMobile()">Work</a>
-  <a href="#tech" onclick="closeMobile()">Tech</a>
+  <a href="#services-expanded" onclick="closeMobile()">Services</a>
+  <a href="#case-studies" onclick="closeMobile()">Case Studies</a>
+  <a href="#journal" onclick="closeMobile()">Journal</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
 </div>
 
 <!-- NAV -->
-<nav id="nav">
+<nav id="nav" aria-label="Main Navigation">
   <a href="#" class="logo">Z<span style="color:var(--lime2)">-</span>ONE <span class="logo-dot"></span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#work">Work</a></li>
-    <li><a href="#tech">Tech</a></li>
+    <li><a href="#services-expanded">Services</a></li>
+    <li><a href="#case-studies">Case Studies</a></li>
+    <li><a href="#journal">Journal</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact" class="nav-cta">Let's talk</a></li>
   </ul>
-  <button class="burger" id="burger" onclick="toggleMobile()" aria-label="Menu">
+  <button class="burger" id="burger" onclick="toggleMobile()" aria-label="Toggle Navigation Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -966,6 +972,166 @@ footer p{font-size:11px;color:#555;letter-spacing:.04em}
     <p>
       Whether you are launching a seed-stage startup MVP, reinventing your visual brand identity, or deploying a high-throughput enterprise platform, Z-One delivers opinionated design systems and clean codebases built to stand out in crowded global markets.
     </p>
+  </div>
+</section>
+
+<!-- DEDICATED SERVICES OVERVIEW SECTION -->
+<section class="services-overview-section reveal" id="services-expanded" style="background:var(--bg);border-bottom:2px solid var(--ink)">
+  <div class="section-eyebrow">Services & Capabilities</div>
+  <h2 class="section-h2">What We Build.</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:var(--gap)">
+    <div style="background:var(--paper);border:2px solid var(--ink);padding:32px;box-shadow:5px 5px 0 var(--ink)">
+      <div style="font-family:'Caveat',cursive;font-size:24px;font-weight:700;color:var(--lime2);margin-bottom:8px">01 / Engineering</div>
+      <h3 style="font-size:22px;font-weight:700;margin-bottom:12px">Web Development</h3>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:16px">Custom web applications built with Next.js, React, and TypeScript. Zero template bloat, ultra-fast load times, and custom CSS design systems built for long-term scalability.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Next.js</span>
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">React</span>
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">TypeScript</span>
+      </div>
+    </div>
+    <div style="background:var(--paper);border:2px solid var(--ink);padding:32px;box-shadow:5px 5px 0 var(--ink)">
+      <div style="font-family:'Caveat',cursive;font-size:24px;font-weight:700;color:var(--lime2);margin-bottom:8px">02 / Immersive</div>
+      <h3 style="font-size:22px;font-weight:700;margin-bottom:12px">3D Websites</h3>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:16px">Spatial 3D web environments using Three.js and WebGL. Interactive product configurators, GLSL shaders, and 60fps real-time graphics that captivate users.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Three.js</span>
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">WebGL</span>
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">GLSL</span>
+      </div>
+    </div>
+    <div style="background:var(--paper);border:2px solid var(--ink);padding:32px;box-shadow:5px 5px 0 var(--ink)">
+      <div style="font-family:'Caveat',cursive;font-size:24px;font-weight:700;color:var(--lime2);margin-bottom:8px">03 / Infrastructure</div>
+      <h3 style="font-size:22px;font-weight:700;margin-bottom:12px">Full Stack Systems</h3>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:16px">End-to-end cloud platforms powered by Node.js, PostgreSQL, and Supabase. Relational schema design, secure auth endpoints, and resilient API architectures.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Node.js</span>
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">PostgreSQL</span>
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Supabase</span>
+      </div>
+    </div>
+    <div style="background:var(--paper);border:2px solid var(--ink);padding:32px;box-shadow:5px 5px 0 var(--ink)">
+      <div style="font-family:'Caveat',cursive;font-size:24px;font-weight:700;color:var(--lime2);margin-bottom:8px">04 / Product Design</div>
+      <h3 style="font-size:22px;font-weight:700;margin-bottom:12px">UI / UX Design</h3>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:16px">User interface and user experience design rooted in research, interactive Figma prototypes, component design tokens, and friction-free user flows.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Figma</span>
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Prototypes</span>
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Design Systems</span>
+      </div>
+    </div>
+    <div style="background:var(--paper);border:2px solid var(--ink);padding:32px;box-shadow:5px 5px 0 var(--ink)">
+      <div style="font-family:'Caveat',cursive;font-size:24px;font-weight:700;color:var(--lime2);margin-bottom:8px">05 / Visual Identity</div>
+      <h3 style="font-size:22px;font-weight:700;margin-bottom:12px">Branding</h3>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:16px">Bold visual branding systems, logo design, custom typography pairing, and comprehensive brand guidelines crafted for modern tech startups.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Logo System</span>
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Typography</span>
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Brand Identity</span>
+      </div>
+    </div>
+    <div style="background:var(--paper);border:2px solid var(--ink);padding:32px;box-shadow:5px 5px 0 var(--ink)">
+      <div style="font-family:'Caveat',cursive;font-size:24px;font-weight:700;color:var(--lime2);margin-bottom:8px">06 / Founders</div>
+      <h3 style="font-size:22px;font-weight:700;margin-bottom:12px">Startup MVP Development</h3>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:16px">Rapid product sprints for early-stage founders. We scope, code, and launch functional investor-ready Minimum Viable Products in weeks.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Rapid Sprints</span>
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Stripe Billing</span>
+        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Production Auth</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEDICATED CASE STUDIES DEEP-DIVE -->
+<section class="case-studies-section reveal" id="case-studies" style="background:var(--paper);border-bottom:2px solid var(--ink)">
+  <div class="section-eyebrow">Detailed Case Studies</div>
+  <h2 class="section-h2">Behind the Build.</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:var(--gap)">
+    
+    <div style="background:var(--bg);border:2px solid var(--ink);padding:32px;box-shadow:6px 6px 0 var(--ink)">
+      <div style="font-family:'Caveat',cursive;font-size:20px;font-weight:700;color:var(--teal);margin-bottom:6px">Healthcare & Telemedicine Platform</div>
+      <h3 style="font-size:26px;font-weight:700;margin-bottom:14px">Kashmir Heal — Modern Medical Access Platform</h3>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:16px">
+        <strong>The Challenge:</strong> Healthcare access in regional mountainous areas faced severe fragmentation, complex doctor appointment scheduling, and delayed patient record management.<br>
+        <strong>Our Solution:</strong> Z-One architected a high-performance web platform combining instant appointment booking, secure doctor consultation queues, and real-time patient notifications. Built with React and TypeScript for maximum stability and accessibility.
+      </p>
+      <div style="background:var(--paper);border:1.5px solid var(--ink);padding:14px;font-size:13px;color:var(--ink);margin-bottom:20px">
+        <strong>Outcome:</strong> Sub-second page load times across 3G mobile networks, 99.9% uptime, and seamless patient onboarding across regional hubs.
+      </div>
+    </div>
+
+    <div style="background:var(--bg);border:2px solid var(--ink);padding:32px;box-shadow:6px 6px 0 var(--ink)">
+      <div style="font-family:'Caveat',cursive;font-size:20px;font-weight:700;color:var(--orange);margin-bottom:6px">Interactive Gaming Engine</div>
+      <h3 style="font-size:26px;font-weight:700;margin-bottom:14px">Mines — Real-Time Canvas Probability Engine</h3>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:16px">
+        <strong>The Challenge:</strong> Traditional web gaming platforms suffer from sluggish canvas rendering, input lag, and uninspiring 2D visual feedback.<br>
+        <strong>Our Solution:</strong> Engineered a custom JavaScript state engine and HTML5 Canvas rendering loop with dynamic multiplier calculations, sound effect synthesis, and custom particle explosion shaders upon tile reveal.
+      </p>
+      <div style="background:var(--paper);border:1.5px solid var(--ink);padding:14px;font-size:13px;color:var(--ink);margin-bottom:20px">
+        <strong>Outcome:</strong> Flawless 60fps rendering, zero input latencies, and high player retention across desktop and mobile devices.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DEDICATED JOURNAL / BLOG PREVIEWS -->
+<section class="journal-section reveal" id="journal" style="background:var(--bg);border-bottom:2px solid var(--ink)">
+  <div class="section-eyebrow">Engineering Journal & Articles</div>
+  <h2 class="section-h2">Thoughts & Insights.</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:var(--gap)">
+    
+    <article style="background:var(--paper);border:2px solid var(--ink);padding:24px;box-shadow:4px 4px 0 var(--ink)">
+      <div style="font-family:'Caveat',cursive;font-size:16px;font-weight:700;color:var(--purple);margin-bottom:8px">3D Websites / Technical</div>
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:10px">What Is a 3D Website? Spatial Web Design Explained</h3>
+      <p style="font-size:13px;color:var(--ink2);line-height:1.65;margin-bottom:14px">An in-depth look at how WebGL, Three.js, and custom GLSL shaders transform flat websites into 60fps interactive 3D spatial brand worlds.</p>
+      <span style="font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)">Read Article →</span>
+    </article>
+
+    <article style="background:var(--paper);border:2px solid var(--ink);padding:24px;box-shadow:4px 4px 0 var(--ink)">
+      <div style="font-family:'Caveat',cursive;font-size:16px;font-weight:700;color:var(--blue);margin-bottom:8px">Web Architecture</div>
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:10px">Why Custom Websites Beat Generic Templates</h3>
+      <p style="font-size:13px;color:var(--ink2);line-height:1.65;margin-bottom:14px">Why off-the-shelf WordPress and PageBuilder templates ruin Core Web Vitals, restrict SEO architecture, and limit visual differentiation.</p>
+      <span style="font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)">Read Article →</span>
+    </article>
+
+    <article style="background:var(--paper);border:2px solid var(--ink);padding:24px;box-shadow:4px 4px 0 var(--ink)">
+      <div style="font-family:'Caveat',cursive;font-size:16px;font-weight:700;color:var(--lime2);margin-bottom:8px">Startup Founders</div>
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:10px">Building Venture-Ready Startup MVPs in 4 Weeks</h3>
+      <p style="font-size:13px;color:var(--ink2);line-height:1.65;margin-bottom:14px">How early-stage founders can prioritize core feature logic, trim unnecessary bloat, and launch investor-ready web platforms quickly.</p>
+      <span style="font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)">Read Article →</span>
+    </article>
+
+  </div>
+</section>
+
+<!-- CONTEXTUAL FAQ SECTION WITH FAQ SCHEMA -->
+<section class="faq-section reveal" id="faq" style="background:var(--paper);border-bottom:2px solid var(--ink)">
+  <div class="section-eyebrow">Frequently Asked Questions</div>
+  <h2 class="section-h2">Clear Answers.</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:20px">
+    
+    <div style="background:var(--bg);border:2px solid var(--ink);padding:24px;box-shadow:4px 4px 0 var(--ink)">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:10px">How much does a custom website or WebGL project cost?</h3>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.7">Project costs are calculated based on feature scope, custom 3D requirements, backend architecture, and design complexity. Contact our team for a transparent, fixed-scope proposal.</p>
+    </div>
+
+    <div style="background:var(--bg);border:2px solid var(--ink);padding:24px;box-shadow:4px 4px 0 var(--ink)">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:10px">Are 3D WebGL websites mobile-friendly and fast?</h3>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.7">Yes. We optimize all 3D canvas models using geometry instancing, GLTF compression, dynamic pixel ratios, and touch controls to ensure 60fps performance on mobile devices.</p>
+    </div>
+
+    <div style="background:var(--bg);border:2px solid var(--ink);padding:24px;box-shadow:4px 4px 0 var(--ink)">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:10px">Which technologies do you use for web builds?</h3>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.7">Our core stack includes Next.js, React, Three.js, WebGL, Node.js, TypeScript, PostgreSQL, Supabase, and TailwindCSS—chosen for maximum speed, security, and developer ergonomics.</p>
+    </div>
+
+    <div style="background:var(--bg);border:2px solid var(--ink);padding:24px;box-shadow:4px 4px 0 var(--ink)">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:10px">How fast can Z-One deliver a startup MVP?</h3>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.7">Our dedicated MVP development sprints run between 4 to 6 weeks from initial architecture mapping to production deployment and investor handoff.</p>
+    </div>
+
   </div>
 </section>
 
