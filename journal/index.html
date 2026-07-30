@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal — Z-ONE | Thoughts on Web, 3D, and Building Things</title>
+<meta name="description" content="The Z-One engineering journal. Deep thoughts on Three.js, WebGL, startup MVPs, custom web development, and building things that matter.">
+<link rel="canonical" href="https://z-onestudios.github.io/journal/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://z-onestudios.github.io/journal/">
+<meta property="og:title" content="Journal — Z-ONE | Thoughts on Web, 3D, and Building Things">
+<meta property="og:description" content="The Z-One engineering journal. Deep thoughts on Three.js, WebGL, startup MVPs, and building things that matter.">
+<meta property="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f2eb;--ink:#0f0f0f;--ink2:#3a3a3a;--paper:#fffdf7;
+  --lime:#c8f060;--lime2:#a8d040;--pink:#ff6b9d;
+  --blue:#4a9eff;--orange:#ff8c42;--purple:#b57bee;--teal:#3ecf8e;
+  --pad:clamp(16px,3.6vw,48px);--pad-y:clamp(56px,7vw,90px);--gap:clamp(14px,2.2vw,28px);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',sans-serif;overflow-x:hidden;cursor:none}
+img{max-width:100%;height:auto}
+@media(hover:hover){.cursor{position:fixed;width:12px;height:12px;background:var(--ink);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .15s,height .15s}.cursor.big{width:36px;height:36px}}
+@media(hover:none){.cursor{display:none}}
+nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:clamp(12px,2vw,16px) var(--pad);z-index:100;background:var(--bg);border-bottom:2px solid transparent;transition:border-color .3s}
+nav.scrolled{border-color:var(--ink)}
+.logo{font-family:'Caveat',cursive;font-size:28px;font-weight:700;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:6px}
+.logo-dot{width:10px;height:10px;background:var(--lime);border:2px solid var(--ink);border-radius:50%;animation:blink 2s ease-in-out infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.nav-links{list-style:none;display:flex;gap:24px;align-items:center}
+.nav-links a{color:var(--ink2);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.04em;position:relative;transition:color .2s}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--lime2);transition:width .3s}
+.nav-links a:hover{color:var(--ink)}.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--ink)!important;color:var(--bg)!important;padding:8px 18px;border:2px solid var(--ink);font-size:12px!important;font-weight:600!important;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;box-shadow:3px 3px 0 var(--lime2);transition:all .2s!important;white-space:nowrap}
+.nav-cta::after{display:none!important}.nav-cta:hover{transform:translate(-2px,-2px)!important;box-shadow:5px 5px 0 var(--lime2)!important}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:200}
+.burger span{display:block;width:24px;height:2px;background:var(--ink);transition:all .3s}
+.mobile-nav{display:none;position:fixed;inset:0;background:var(--bg);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity .3s}
+.mobile-nav.open{opacity:1;pointer-events:all}
+.mobile-nav a{font-family:'Caveat',cursive;font-size:36px;font-weight:700;color:var(--ink);text-decoration:none}
+@media(max-width:768px){.nav-links{display:none}.burger{display:flex}.mobile-nav{display:flex}}
+
+.page-hero{min-height:55vh;display:flex;flex-direction:column;justify-content:flex-end;padding:calc(var(--pad-y) + 80px) var(--pad) var(--pad-y);background:var(--ink);position:relative;overflow:hidden;border-bottom:2px solid var(--ink)}
+.hero-noise{position:absolute;inset:0;opacity:.04;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--lime);border:2px solid var(--lime2);padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:20px;transform:rotate(-1deg);width:fit-content}
+.page-hero h1{font-family:'Caveat',cursive;font-size:clamp(48px,9vw,120px);font-weight:700;color:var(--bg);line-height:.9;letter-spacing:-.03em;margin-bottom:24px}
+.page-hero h1 em{font-style:normal;color:var(--lime)}
+.hero-sub{font-size:16px;color:#aaa;max-width:580px;line-height:1.75}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--bg);text-decoration:none;opacity:.6;margin-bottom:32px;transition:opacity .2s}
+.back-link:hover{opacity:1}
+
+/* ARTICLES */
+.articles-wrap{padding:var(--pad-y) var(--pad);max-width:900px;margin:0 auto}
+.article-card{border-bottom:2px solid var(--ink);padding:clamp(28px,4vw,48px) 0;position:relative;transition:all .3s}
+.article-card:first-child{border-top:2px solid var(--ink)}
+.article-cat{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-bottom:14px}
+.cat-dot{width:8px;height:8px;border-radius:50%;border:2px solid var(--ink);flex-shrink:0}
+.article-card h2{font-size:clamp(22px,4vw,36px);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;transition:color .2s}
+.article-card:hover h2{color:var(--lime2)}
+.article-card p{font-size:15px;color:var(--ink2);line-height:1.8;margin-bottom:20px}
+.article-card .read-time{font-family:'Caveat',cursive;font-size:15px;color:var(--ink2);font-weight:600}
+.article-content{display:none;padding:24px 0 0}
+.article-content.open{display:block}
+.article-content h3{font-size:22px;font-weight:700;margin:32px 0 14px}
+.article-content p{font-size:15px;color:var(--ink2);line-height:1.85;margin-bottom:18px}
+.article-content strong{color:var(--ink)}
+.read-toggle{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);padding:10px 20px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--lime2);cursor:pointer;font-family:'Space Grotesk',sans-serif;transition:all .2s}
+.read-toggle:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--lime2)}
+.read-toggle.open-btn{background:var(--lime);color:var(--ink)}
+
+footer{background:var(--ink);color:var(--bg);padding:clamp(28px,4vw,48px) var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;border-top:2px solid var(--ink)}
+.footer-logo{font-family:'Caveat',cursive;font-size:32px;font-weight:700}
+footer p{font-size:13px;color:#888}
+.footer-nav{display:flex;gap:20px;flex-wrap:wrap}
+.footer-nav a{color:#888;text-decoration:none;font-size:13px;transition:color .2s}.footer-nav a:hover{color:var(--lime)}
+.reveal{opacity:0;transform:translateY(24px);transition:all .6s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<div class="cursor" id="cur"></div>
+<div class="mobile-nav" id="mobileNav">
+  <a href="/" onclick="closeMobile()">Home</a>
+  <a href="/case-studies/" onclick="closeMobile()">Case Studies</a>
+  <a href="/journal/" onclick="closeMobile()">Journal</a>
+  <a href="/#faq" onclick="closeMobile()">FAQ</a>
+  <a href="/#contact" onclick="closeMobile()">Contact</a>
+</div>
+<nav id="nav" aria-label="Main Navigation">
+  <a href="/" class="logo">Z<span style="color:var(--lime2)">-</span>ONE <span class="logo-dot"></span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/case-studies/">Case Studies</a></li>
+    <li><a href="/journal/">Journal</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+    <li><a href="/#contact" class="nav-cta">Let's talk</a></li>
+  </ul>
+  <button class="burger" id="burger" onclick="toggleMobile()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+
+<header class="page-hero">
+  <div class="hero-noise"></div>
+  <a href="/" class="back-link">← Back to home</a>
+  <div class="hero-tag"><span>📝</span> Engineering Notes</div>
+  <h1>The <em>journal.</em></h1>
+  <p class="hero-sub">Honest writing about web development, 3D graphics, startup engineering, and the things we've learned the hard way. No fluff.</p>
+</header>
+
+<main class="articles-wrap">
+
+  <article class="article-card reveal">
+    <div class="article-cat"><span class="cat-dot" style="background:var(--purple)"></span>3D Websites / Technical</div>
+    <h2>What Is a 3D Website? A Practical Guide to Spatial Web Design</h2>
+    <p>You've probably seen them — websites where objects float, rotate, and respond to your mouse. They look expensive. They feel premium. But what's actually happening under the hood? And more importantly — should you build one?</p>
+    <span class="read-time">☕ 8 min read</span>
+    <div class="article-content" id="article-1">
+      <h3>The short version</h3>
+      <p>A 3D website uses your browser's <strong>GPU</strong> to render three-dimensional objects in real-time. The dominant technology is <strong>WebGL</strong>, a JavaScript API that talks directly to your graphics card. Most developers use <strong>Three.js</strong> — a library that wraps WebGL's gnarly low-level code into something human beings can actually work with.</p>
+      <p>When someone visits a 3D website, their browser downloads the scene geometry (usually as compressed GLTF files), builds a render pipeline, and starts drawing frames at 60fps. It's the same fundamental technology that powers video games — just running inside a browser tab instead of a desktop application.</p>
+      <h3>When 3D makes sense (and when it doesn't)</h3>
+      <p>3D websites work brilliantly for <strong>product showcases</strong> where you need the user to inspect something from every angle — think furniture, electronics, or architectural walkthroughs. They also crush it for <strong>brand storytelling</strong> — when a flat page can't convey the mood you're after.</p>
+      <p>Where they don't make sense: content-heavy sites. If someone needs to read 2,000 words of documentation, a spinning icosahedron in the background is just a distraction. Same for e-commerce with 500+ SKUs. The GPU overhead isn't worth it when your primary interaction is "add to cart."</p>
+      <h3>The performance question</h3>
+      <p>The number one concern clients have is speed. And it's fair. A poorly built 3D site can absolutely tank your Core Web Vitals. But here's the thing — a well-built one doesn't. We compress all 3D models using <strong>Draco compression</strong>, which shrinks geometry files by 90%. We use <strong>texture atlasing</strong> to reduce GPU draw calls. And we implement progressive loading so the page renders useful content while the 3D scene assembles in the background.</p>
+      <p>On a decent phone over 4G, our 3D sites load in under 2 seconds. That's faster than most WordPress templates.</p>
+      <h3>Our stack for 3D projects</h3>
+      <p>We use <strong>Three.js</strong> for scene management, <strong>React Three Fiber</strong> when we need tight React integration, and custom <strong>GLSL shaders</strong> when the visual effect can't be achieved with standard materials. For animation sequencing, <strong>GSAP</strong> handles the heavy lifting. Everything deploys to Vercel with aggressive caching headers.</p>
+      <p>If you're thinking about a 3D web presence, <a href="/#contact" style="color:var(--ink);font-weight:700">talk to us</a>. We'll be honest about whether it makes sense for your use case.</p>
+    </div>
+    <div style="margin-top:20px"><button class="read-toggle" onclick="toggleArticle('article-1',this)">Read Full Article ↓</button></div>
+  </article>
+
+  <article class="article-card reveal">
+    <div class="article-cat"><span class="cat-dot" style="background:var(--blue)"></span>Web Architecture</div>
+    <h2>Why Custom Websites Beat Generic Templates — Every Time</h2>
+    <p>We've had this conversation with probably 40 founders at this point. "Why can't I just use Squarespace?" You can. You absolutely can. But here's what you're giving up.</p>
+    <span class="read-time">☕ 6 min read</span>
+    <div class="article-content" id="article-2">
+      <h3>Templates solve a different problem</h3>
+      <p>Website templates are designed for <strong>speed of deployment</strong>, not speed of loading. They ship with dozens of features you'll never use — sliders, mega menus, WooCommerce hooks, social widgets — and every one of those features adds JavaScript to your page. The average WordPress theme loads <strong>2.4MB of JavaScript</strong> before your first meaningful paint.</p>
+      <p>A custom-built Next.js site ships exactly what it needs. Nothing more. Our typical homepage weighs under 200KB total.</p>
+      <h3>The SEO tax</h3>
+      <p>Google's Core Web Vitals directly impact your search rankings. Templates consistently fail on <strong>Largest Contentful Paint</strong> because they load everything at once. They fail on <strong>Cumulative Layout Shift</strong> because they inject ads and widgets after the initial render. And they fail on <strong>First Input Delay</strong> because all that JavaScript blocks the main thread.</p>
+      <p>Custom builds let you control exactly when and how every asset loads. We can lazy-load below-the-fold images, defer non-critical scripts, and preload the fonts that matter — because we wrote the code that manages all of it.</p>
+      <h3>The design ceiling</h3>
+      <p>Here's the thing nobody talks about: templates have a design ceiling. You can change the colors, swap the fonts, maybe move some blocks around. But the underlying grid, the spacing system, the animation timing — those are baked in. Every site built on the same template looks like a cousin of every other site built on that template.</p>
+      <p>When we build custom, there is no ceiling. If you want a section that transitions into a 3D environment on scroll, we build that. If you want a custom cursor that morphs based on what it's hovering, we build that. The design is limited only by imagination and good taste — not by a theme's configuration panel.</p>
+      <p>Custom doesn't have to mean slow or expensive. It means <strong>intentional</strong>. And intentional websites convert better, rank higher, and last longer. <a href="/case-studies/" style="color:var(--ink);font-weight:700">See our case studies</a> for proof.</p>
+    </div>
+    <div style="margin-top:20px"><button class="read-toggle" onclick="toggleArticle('article-2',this)">Read Full Article ↓</button></div>
+  </article>
+
+  <article class="article-card reveal">
+    <div class="article-cat"><span class="cat-dot" style="background:var(--lime2)"></span>Startups</div>
+    <h2>Building Startup MVPs That Actually Get Funded</h2>
+    <p>Most MVPs fail for the same reason — they try to be everything from day one. We've shipped MVPs that got funded, and the secret isn't more features. It's fewer features, done with conviction.</p>
+    <span class="read-time">☕ 7 min read</span>
+    <div class="article-content" id="article-3">
+      <h3>The feature trap</h3>
+      <p>Every founder we work with starts with a feature list that's 3x too long. Dashboard. Analytics. Team management. Integrations. Payment tiers. Admin panel. Notifications. The list goes on.</p>
+      <p>Here's what investors actually look at: <strong>Does the core value proposition work?</strong> That's it. They don't care about your notification preferences page. They care about whether your one key feature solves a real problem for real people.</p>
+      <h3>Our MVP framework</h3>
+      <p>We run a brutal prioritization exercise in the first week. Every proposed feature gets one of three labels: <strong>Core</strong> (the product doesn't exist without it), <strong>Important</strong> (makes it better but isn't essential), or <strong>Nice</strong> (cool but irrelevant to validation).</p>
+      <p>Only Core features make it into the MVP. Everything else goes on a roadmap for post-validation. This consistently cuts scope by 60-70%, which means we can ship in <strong>4-6 weeks</strong> instead of 4-6 months.</p>
+      <h3>The tech decisions that matter</h3>
+      <p>For MVPs, we almost always reach for <strong>Next.js + Supabase</strong>. Next.js gives us server-side rendering, API routes, and static generation in one framework. Supabase gives us PostgreSQL, auth, and real-time subscriptions without managing infrastructure. Add <strong>Stripe</strong> for billing and you have a production-ready stack that scales to millions of users.</p>
+      <p>The critical thing: we write clean, modular TypeScript from day one. No shortcuts that create technical debt. Because if the MVP works and you need to scale, you shouldn't need to rewrite everything. You should be able to hire engineers and have them productive within a week.</p>
+      <p>Thinking about building an MVP? <a href="/#contact" style="color:var(--ink);font-weight:700">Let's scope it together</a>. No pitch deck required.</p>
+    </div>
+    <div style="margin-top:20px"><button class="read-toggle" onclick="toggleArticle('article-3',this)">Read Full Article ↓</button></div>
+  </article>
+
+  <article class="article-card reveal">
+    <div class="article-cat"><span class="cat-dot" style="background:var(--orange)"></span>Performance</div>
+    <h2>Why Your Website Is Slow (And How to Fix It)</h2>
+    <p>Speed isn't a feature. It's the feature. Every 100ms of added load time costs you 1% in conversions. Here's how we think about web performance at Z-One.</p>
+    <span class="read-time">☕ 5 min read</span>
+    <div class="article-content" id="article-4">
+      <h3>The usual suspects</h3>
+      <p><strong>Unoptimized images</strong> are the number one offender. We've audited sites serving 4MB hero images that could be 80KB WebP files with zero visible quality loss. Always use next-gen formats. Always specify dimensions. Always lazy-load below the fold.</p>
+      <p><strong>Render-blocking JavaScript</strong> is number two. If your analytics, chat widget, and social proof popup all load before the user sees content, you've lost them. Defer everything that isn't critical to first paint.</p>
+      <p><strong>Web fonts</strong> are sneaky. Four font weights at 200KB each means 800KB of fonts alone. We use font-display: swap, subset our character sets, and preload the one weight that appears above the fold.</p>
+      <h3>Our performance checklist</h3>
+      <p>Every Z-One project ships with: images in WebP/AVIF with srcset for responsive sizing, critical CSS inlined in the head, JavaScript deferred or loaded as ES modules, font preloading with display:swap, aggressive caching headers via Vercel, and lazy-loaded iframes and below-fold media.</p>
+      <p>The result? Our sites consistently score <strong>95-100 on Lighthouse</strong> without sacrificing visual quality or animation complexity. Speed and beauty aren't opposites — they're both products of good engineering.</p>
+    </div>
+    <div style="margin-top:20px"><button class="read-toggle" onclick="toggleArticle('article-4',this)">Read Full Article ↓</button></div>
+  </article>
+
+  <article class="article-card reveal">
+    <div class="article-cat"><span class="cat-dot" style="background:var(--teal)"></span>Process</div>
+    <h2>Behind the Build: How We Actually Make Websites</h2>
+    <p>People always ask about our process. It's not complicated. It's just disciplined. Here's how a typical Z-One project goes from "hey, I have an idea" to "holy crap, it's live."</p>
+    <span class="read-time">☕ 6 min read</span>
+    <div class="article-content" id="article-5">
+      <h3>Week 1: Discovery and architecture</h3>
+      <p>We don't start in Figma. We start in a shared doc. What problem are we solving? Who's using this? What does success look like in 3 months? We map out the <strong>information architecture</strong> — every page, every user flow, every data relationship — before a single pixel gets designed.</p>
+      <h3>Week 2-3: Design and component system</h3>
+      <p>Once the architecture is locked, we design in Figma using a <strong>component-first approach</strong>. We build the design system — typography scale, color tokens, spacing units, button variants — before designing any pages. This means every page we design later is automatically consistent.</p>
+      <h3>Week 3-6: Build sprint</h3>
+      <p>Development happens in parallel with design refinement. We use <strong>Next.js</strong> with TypeScript, building components that mirror the Figma structure exactly. Backend work (API routes, database schemas, auth) runs concurrently. We deploy to preview URLs after every push so clients can see progress in real-time.</p>
+      <h3>Week 6-7: Polish and launch</h3>
+      <p>The last week is all about the details that separate good from great. Micro-animations. Loading states. Error handling. SEO metadata. Performance optimization. Accessibility audit. Then we ship it — usually on a Tuesday, because nobody launches on Fridays.</p>
+      <p>Want to see this process in action? <a href="/case-studies/" style="color:var(--ink);font-weight:700">Check our case studies</a>.</p>
+    </div>
+    <div style="margin-top:20px"><button class="read-toggle" onclick="toggleArticle('article-5',this)">Read Full Article ↓</button></div>
+  </article>
+
+</main>
+
+<section style="padding:var(--pad-y) var(--pad);background:var(--lime);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)">
+  <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px">
+    <div>
+      <div style="font-family:'Caveat',cursive;font-size:44px;font-weight:700;line-height:1;margin-bottom:10px">Got a project?</div>
+      <div style="font-size:16px;color:var(--ink2)">We're open for new work. Tell us what you're building.</div>
+    </div>
+    <a href="mailto:officialz.one10f@gmail.com" style="display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);padding:14px 28px;font-size:14px;font-weight:700;text-decoration:none;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--lime2);transition:all .2s">Start a conversation →</a>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">Z-ONE<span style="color:var(--lime)">.</span></span>
+  <p>© 2025 Z-One. Home to young founders. Srinagar, Kashmir.</p>
+  <nav class="footer-nav" aria-label="Footer Navigation">
+    <a href="/">Home</a>
+    <a href="/case-studies/">Case Studies</a>
+    <a href="/journal/">Journal</a>
+    <a href="/#contact">Contact</a>
+  </nav>
+</footer>
+
+<script>
+const cur=document.getElementById('cur');
+if(cur&&window.matchMedia('(hover:hover)').matches){document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});document.querySelectorAll('a,button,.article-card').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))})}
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+const burger=document.getElementById('burger');const mobileNav=document.getElementById('mobileNav');
+function toggleMobile(){burger.classList.toggle('open');mobileNav.classList.toggle('open');document.body.style.overflow=mobileNav.classList.contains('open')?'hidden':'';}
+function closeMobile(){burger.classList.remove('open');mobileNav.classList.remove('open');document.body.style.overflow='';}
+function toggleArticle(id,btn){
+  const el=document.getElementById(id);
+  const isOpen=el.classList.contains('open');
+  el.classList.toggle('open');
+  btn.textContent=isOpen?'Read Full Article ↓':'Close Article ↑';
+  btn.classList.toggle('open-btn');
+  if(!isOpen) el.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.06});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

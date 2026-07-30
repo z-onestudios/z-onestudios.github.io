@@ -615,9 +615,8 @@ footer p{font-size:11px;color:#555;letter-spacing:.04em}
 <div class="mobile-nav" id="mobileNav">
   <a href="#about" onclick="closeMobile()">About</a>
   <a href="#work" onclick="closeMobile()">Work</a>
-  <a href="#services-expanded" onclick="closeMobile()">Services</a>
-  <a href="#case-studies" onclick="closeMobile()">Case Studies</a>
-  <a href="#journal" onclick="closeMobile()">Journal</a>
+  <a href="/case-studies/" onclick="closeMobile()">Case Studies</a>
+  <a href="/journal/" onclick="closeMobile()">Journal</a>
   <a href="#faq" onclick="closeMobile()">FAQ</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
 </div>
@@ -628,9 +627,8 @@ footer p{font-size:11px;color:#555;letter-spacing:.04em}
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#work">Work</a></li>
-    <li><a href="#services-expanded">Services</a></li>
-    <li><a href="#case-studies">Case Studies</a></li>
-    <li><a href="#journal">Journal</a></li>
+    <li><a href="/case-studies/">Case Studies</a></li>
+    <li><a href="/journal/">Journal</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact" class="nav-cta">Let's talk</a></li>
   </ul>
@@ -975,73 +973,7 @@ footer p{font-size:11px;color:#555;letter-spacing:.04em}
   </div>
 </section>
 
-<!-- DEDICATED SERVICES OVERVIEW SECTION -->
-<section class="services-overview-section reveal" id="services-expanded" style="background:var(--bg);border-bottom:2px solid var(--ink)">
-  <div class="section-eyebrow">Services & Capabilities</div>
-  <h2 class="section-h2">What We Build.</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:var(--gap)">
-    <div style="background:var(--paper);border:2px solid var(--ink);padding:32px;box-shadow:5px 5px 0 var(--ink)">
-      <div style="font-family:'Caveat',cursive;font-size:24px;font-weight:700;color:var(--lime2);margin-bottom:8px">01 / Engineering</div>
-      <h3 style="font-size:22px;font-weight:700;margin-bottom:12px">Web Development</h3>
-      <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:16px">Custom web applications built with Next.js, React, and TypeScript. Zero template bloat, ultra-fast load times, and custom CSS design systems built for long-term scalability.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Next.js</span>
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">React</span>
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">TypeScript</span>
-      </div>
-    </div>
-    <div style="background:var(--paper);border:2px solid var(--ink);padding:32px;box-shadow:5px 5px 0 var(--ink)">
-      <div style="font-family:'Caveat',cursive;font-size:24px;font-weight:700;color:var(--lime2);margin-bottom:8px">02 / Immersive</div>
-      <h3 style="font-size:22px;font-weight:700;margin-bottom:12px">3D Websites</h3>
-      <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:16px">Spatial 3D web environments using Three.js and WebGL. Interactive product configurators, GLSL shaders, and 60fps real-time graphics that captivate users.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Three.js</span>
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">WebGL</span>
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">GLSL</span>
-      </div>
-    </div>
-    <div style="background:var(--paper);border:2px solid var(--ink);padding:32px;box-shadow:5px 5px 0 var(--ink)">
-      <div style="font-family:'Caveat',cursive;font-size:24px;font-weight:700;color:var(--lime2);margin-bottom:8px">03 / Infrastructure</div>
-      <h3 style="font-size:22px;font-weight:700;margin-bottom:12px">Full Stack Systems</h3>
-      <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:16px">End-to-end cloud platforms powered by Node.js, PostgreSQL, and Supabase. Relational schema design, secure auth endpoints, and resilient API architectures.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Node.js</span>
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">PostgreSQL</span>
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Supabase</span>
-      </div>
-    </div>
-    <div style="background:var(--paper);border:2px solid var(--ink);padding:32px;box-shadow:5px 5px 0 var(--ink)">
-      <div style="font-family:'Caveat',cursive;font-size:24px;font-weight:700;color:var(--lime2);margin-bottom:8px">04 / Product Design</div>
-      <h3 style="font-size:22px;font-weight:700;margin-bottom:12px">UI / UX Design</h3>
-      <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:16px">User interface and user experience design rooted in research, interactive Figma prototypes, component design tokens, and friction-free user flows.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Figma</span>
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Prototypes</span>
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Design Systems</span>
-      </div>
-    </div>
-    <div style="background:var(--paper);border:2px solid var(--ink);padding:32px;box-shadow:5px 5px 0 var(--ink)">
-      <div style="font-family:'Caveat',cursive;font-size:24px;font-weight:700;color:var(--lime2);margin-bottom:8px">05 / Visual Identity</div>
-      <h3 style="font-size:22px;font-weight:700;margin-bottom:12px">Branding</h3>
-      <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:16px">Bold visual branding systems, logo design, custom typography pairing, and comprehensive brand guidelines crafted for modern tech startups.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Logo System</span>
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Typography</span>
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Brand Identity</span>
-      </div>
-    </div>
-    <div style="background:var(--paper);border:2px solid var(--ink);padding:32px;box-shadow:5px 5px 0 var(--ink)">
-      <div style="font-family:'Caveat',cursive;font-size:24px;font-weight:700;color:var(--lime2);margin-bottom:8px">06 / Founders</div>
-      <h3 style="font-size:22px;font-weight:700;margin-bottom:12px">Startup MVP Development</h3>
-      <p style="font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:16px">Rapid product sprints for early-stage founders. We scope, code, and launch functional investor-ready Minimum Viable Products in weeks.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Rapid Sprints</span>
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Stripe Billing</span>
-        <span style="background:var(--bg);border:1px solid var(--ink);padding:3px 8px;font-size:11px;font-weight:600">Production Auth</span>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- DEDICATED CASE STUDIES DEEP-DIVE -->
 <section class="case-studies-section reveal" id="case-studies" style="background:var(--paper);border-bottom:2px solid var(--ink)">
@@ -1079,57 +1011,70 @@ footer p{font-size:11px;color:#555;letter-spacing:.04em}
 <!-- DEDICATED JOURNAL / BLOG PREVIEWS -->
 <section class="journal-section reveal" id="journal" style="background:var(--bg);border-bottom:2px solid var(--ink)">
   <div class="section-eyebrow">Engineering Journal & Articles</div>
-  <h2 class="section-h2">Thoughts & Insights.</h2>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:16px">
+    <h2 class="section-h2" style="margin-bottom:0">Thoughts & Insights.</h2>
+    <a href="/journal/" class="btn btn-dark" style="text-decoration:none">View All Articles →</a>
+  </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:var(--gap)">
     
-    <article style="background:var(--paper);border:2px solid var(--ink);padding:24px;box-shadow:4px 4px 0 var(--ink)">
-      <div style="font-family:'Caveat',cursive;font-size:16px;font-weight:700;color:var(--purple);margin-bottom:8px">3D Websites / Technical</div>
-      <h3 style="font-size:20px;font-weight:700;margin-bottom:10px">What Is a 3D Website? Spatial Web Design Explained</h3>
-      <p style="font-size:13px;color:var(--ink2);line-height:1.65;margin-bottom:14px">An in-depth look at how WebGL, Three.js, and custom GLSL shaders transform flat websites into 60fps interactive 3D spatial brand worlds.</p>
-      <span style="font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)">Read Article →</span>
+    <article style="background:var(--paper);border:2px solid var(--ink);padding:28px;box-shadow:5px 5px 0 var(--ink);display:flex;flex-direction:column;justify-content:space-between">
+      <div>
+        <div style="font-family:'Caveat',cursive;font-size:18px;font-weight:700;color:var(--purple);margin-bottom:10px">3D Websites / Technical</div>
+        <h3 style="font-size:22px;font-weight:700;margin-bottom:12px">What Is a 3D Website? Spatial Web Design Explained</h3>
+        <p style="font-size:14px;color:var(--ink2);line-height:1.7;margin-bottom:20px">An in-depth look at how WebGL, Three.js, and custom GLSL shaders transform flat websites into 60fps interactive 3D spatial brand worlds.</p>
+      </div>
+      <a href="/journal/" style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:6px">Read Article ↗</a>
     </article>
 
-    <article style="background:var(--paper);border:2px solid var(--ink);padding:24px;box-shadow:4px 4px 0 var(--ink)">
-      <div style="font-family:'Caveat',cursive;font-size:16px;font-weight:700;color:var(--blue);margin-bottom:8px">Web Architecture</div>
-      <h3 style="font-size:20px;font-weight:700;margin-bottom:10px">Why Custom Websites Beat Generic Templates</h3>
-      <p style="font-size:13px;color:var(--ink2);line-height:1.65;margin-bottom:14px">Why off-the-shelf WordPress and PageBuilder templates ruin Core Web Vitals, restrict SEO architecture, and limit visual differentiation.</p>
-      <span style="font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)">Read Article →</span>
+    <article style="background:var(--paper);border:2px solid var(--ink);padding:28px;box-shadow:5px 5px 0 var(--ink);display:flex;flex-direction:column;justify-content:space-between">
+      <div>
+        <div style="font-family:'Caveat',cursive;font-size:18px;font-weight:700;color:var(--blue);margin-bottom:10px">Web Architecture</div>
+        <h3 style="font-size:22px;font-weight:700;margin-bottom:12px">Why Custom Websites Beat Generic Templates</h3>
+        <p style="font-size:14px;color:var(--ink2);line-height:1.7;margin-bottom:20px">Why off-the-shelf WordPress and PageBuilder templates ruin Core Web Vitals, restrict SEO architecture, and limit visual differentiation.</p>
+      </div>
+      <a href="/journal/" style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:6px">Read Article ↗</a>
     </article>
 
-    <article style="background:var(--paper);border:2px solid var(--ink);padding:24px;box-shadow:4px 4px 0 var(--ink)">
-      <div style="font-family:'Caveat',cursive;font-size:16px;font-weight:700;color:var(--lime2);margin-bottom:8px">Startup Founders</div>
-      <h3 style="font-size:20px;font-weight:700;margin-bottom:10px">Building Venture-Ready Startup MVPs in 4 Weeks</h3>
-      <p style="font-size:13px;color:var(--ink2);line-height:1.65;margin-bottom:14px">How early-stage founders can prioritize core feature logic, trim unnecessary bloat, and launch investor-ready web platforms quickly.</p>
-      <span style="font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)">Read Article →</span>
+    <article style="background:var(--paper);border:2px solid var(--ink);padding:28px;box-shadow:5px 5px 0 var(--ink);display:flex;flex-direction:column;justify-content:space-between">
+      <div>
+        <div style="font-family:'Caveat',cursive;font-size:18px;font-weight:700;color:var(--lime2);margin-bottom:10px">Startup Founders</div>
+        <h3 style="font-size:22px;font-weight:700;margin-bottom:12px">Building Venture-Ready Startup MVPs in 4 Weeks</h3>
+        <p style="font-size:14px;color:var(--ink2);line-height:1.7;margin-bottom:20px">How early-stage founders can prioritize core feature logic, trim unnecessary bloat, and launch investor-ready web platforms quickly.</p>
+      </div>
+      <a href="/journal/" style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:6px">Read Article ↗</a>
     </article>
 
   </div>
 </section>
 
-<!-- CONTEXTUAL FAQ SECTION WITH FAQ SCHEMA -->
+<!-- BEAUTIFUL CONTEXTUAL FAQ SECTION -->
 <section class="faq-section reveal" id="faq" style="background:var(--paper);border-bottom:2px solid var(--ink)">
   <div class="section-eyebrow">Frequently Asked Questions</div>
   <h2 class="section-h2">Clear Answers.</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:20px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(480px,100%),1fr));gap:24px">
     
-    <div style="background:var(--bg);border:2px solid var(--ink);padding:24px;box-shadow:4px 4px 0 var(--ink)">
-      <h3 style="font-size:18px;font-weight:700;margin-bottom:10px">How much does a custom website or WebGL project cost?</h3>
-      <p style="font-size:14px;color:var(--ink2);line-height:1.7">Project costs are calculated based on feature scope, custom 3D requirements, backend architecture, and design complexity. Contact our team for a transparent, fixed-scope proposal.</p>
+    <div style="background:var(--bg);border:2px solid var(--ink);padding:28px;box-shadow:5px 5px 0 var(--lime2);position:relative;overflow:hidden">
+      <div style="font-family:'Caveat',cursive;font-size:36px;font-weight:700;color:var(--lime2);position:absolute;top:10px;right:16px;opacity:.6">01</div>
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;padding-right:40px">How much does a custom website or WebGL project cost?</h3>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.75">Project costs depend on scope, custom 3D requirements, backend architecture, and design complexity. We don't do hourly billing traps — we give you a transparent, fixed-scope proposal before writing a line of code.</p>
     </div>
 
-    <div style="background:var(--bg);border:2px solid var(--ink);padding:24px;box-shadow:4px 4px 0 var(--ink)">
-      <h3 style="font-size:18px;font-weight:700;margin-bottom:10px">Are 3D WebGL websites mobile-friendly and fast?</h3>
-      <p style="font-size:14px;color:var(--ink2);line-height:1.7">Yes. We optimize all 3D canvas models using geometry instancing, GLTF compression, dynamic pixel ratios, and touch controls to ensure 60fps performance on mobile devices.</p>
+    <div style="background:var(--bg);border:2px solid var(--ink);padding:28px;box-shadow:5px 5px 0 var(--pink);position:relative;overflow:hidden">
+      <div style="font-family:'Caveat',cursive;font-size:36px;font-weight:700;color:var(--pink);position:absolute;top:10px;right:16px;opacity:.6">02</div>
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;padding-right:40px">Are 3D WebGL websites mobile-friendly and fast?</h3>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.75">Yes. We optimize all 3D canvas models using Draco compression, geometry instancing, dynamic pixel ratios, and touch controls to guarantee 60fps performance across mobile devices.</p>
     </div>
 
-    <div style="background:var(--bg);border:2px solid var(--ink);padding:24px;box-shadow:4px 4px 0 var(--ink)">
-      <h3 style="font-size:18px;font-weight:700;margin-bottom:10px">Which technologies do you use for web builds?</h3>
-      <p style="font-size:14px;color:var(--ink2);line-height:1.7">Our core stack includes Next.js, React, Three.js, WebGL, Node.js, TypeScript, PostgreSQL, Supabase, and TailwindCSS—chosen for maximum speed, security, and developer ergonomics.</p>
+    <div style="background:var(--bg);border:2px solid var(--ink);padding:28px;box-shadow:5px 5px 0 var(--blue);position:relative;overflow:hidden">
+      <div style="font-family:'Caveat',cursive;font-size:36px;font-weight:700;color:var(--blue);position:absolute;top:10px;right:16px;opacity:.6">03</div>
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;padding-right:40px">Which technologies do you use for web builds?</h3>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.75">Our stack centers around Next.js, React, Three.js, WebGL, Node.js, TypeScript, PostgreSQL, Supabase, and TailwindCSS — chosen for speed, security, and long-term scalability.</p>
     </div>
 
-    <div style="background:var(--bg);border:2px solid var(--ink);padding:24px;box-shadow:4px 4px 0 var(--ink)">
-      <h3 style="font-size:18px;font-weight:700;margin-bottom:10px">How fast can Z-One deliver a startup MVP?</h3>
-      <p style="font-size:14px;color:var(--ink2);line-height:1.7">Our dedicated MVP development sprints run between 4 to 6 weeks from initial architecture mapping to production deployment and investor handoff.</p>
+    <div style="background:var(--bg);border:2px solid var(--ink);padding:28px;box-shadow:5px 5px 0 var(--purple);position:relative;overflow:hidden">
+      <div style="font-family:'Caveat',cursive;font-size:36px;font-weight:700;color:var(--purple);position:absolute;top:10px;right:16px;opacity:.6">04</div>
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;padding-right:40px">How fast can Z-One deliver a startup MVP?</h3>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.75">Our MVP sprints take between 4 to 6 weeks from initial scope mapping to production deployment, ready for real users and investor pitches.</p>
     </div>
 
   </div>
@@ -1163,14 +1108,13 @@ footer p{font-size:11px;color:#555;letter-spacing:.04em}
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER (FIXED GAP & SVG CLOSING TAG) -->
 <footer>
   <span class="footer-logo">Z-ONE<span style="color:var(--lime)">.</span></span>
-  <p> 2025 Z-One. Home to young founders.</p>
-  <div class="footer-socials">
-    <!-- Instagram — gradient brand colors -->
-    <a href="https://www.instagram.com/z.0ne.official/" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <p>© 2025 Z-One. Home to young founders. Srinagar, Kashmir.</p>
+  <div class="footer-socials" style="display:flex;align-items:center;gap:16px">
+    <a href="https://www.instagram.com/z.0ne.official/" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer" style="display:inline-flex">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px">
         <defs>
           <radialGradient id="ig1" cx="30%" cy="107%" r="150%">
             <stop offset="0%" stop-color="#fdf497"/>
@@ -1181,10 +1125,10 @@ footer p{font-size:11px;color:#555;letter-spacing:.04em}
           </radialGradient>
         </defs>
         <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#ig1)"/>
-        <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="none"/>
         <circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.5" fill="none"/>
         <circle cx="17.5" cy="6.5" r="1" fill="white"/>
       </svg>
+    </a>
   </div>
 </footer>
 
