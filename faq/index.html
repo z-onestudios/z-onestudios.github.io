@@ -65,7 +65,8 @@ footer p{font-size:13px;color:#888}
 <body>
 <div class="cursor" id="cur"></div>
 <div class="mobile-nav" id="mobileNav">
-  <a href="/" onclick="closeMobile()">Home</a>
+  <a href="/about/" onclick="closeMobile()">About</a>
+  <a href="/#work" onclick="closeMobile()">Work</a>
   <a href="/case-studies/" onclick="closeMobile()">Case Studies</a>
   <a href="/journal/" onclick="closeMobile()">Journal</a>
   <a href="/faq/" onclick="closeMobile()">FAQ</a>
@@ -74,18 +75,22 @@ footer p{font-size:13px;color:#888}
 <nav id="nav" aria-label="Main Navigation">
   <a href="/" class="logo">Z<span style="color:var(--lime2)">-</span>ONE <span class="logo-dot"></span></a>
   <ul class="nav-links">
-    <li><a href="/">Home</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/#work">Work</a></li>
     <li><a href="/case-studies/">Case Studies</a></li>
     <li><a href="/journal/">Journal</a></li>
     <li><a href="/faq/">FAQ</a></li>
     <li><a href="/#contact" class="nav-cta">Let's talk</a></li>
   </ul>
-  <button class="burger" id="burger" onclick="toggleMobile()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <button class="burger" id="burger" onclick="toggleMobile()" aria-label="Toggle Navigation Menu"><span></span><span></span><span></span></button>
 </nav>
 
 <header class="page-hero">
   <a href="/" class="back-link">← Back to home</a>
-  <div class="hero-tag"><span>❓</span> Frequently Asked Questions</div>
+  <div class="hero-tag">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 19H11V17H13V19ZM15.07 11.25L14.17 12.17C13.45 12.9 13 13.5 13 15H11V14.5C11 13.4 11.45 12.4 12.17 11.67L13.41 10.41C13.78 10.05 14 9.55 14 9C14 7.9 13.1 7 12 7C10.9 7 10 7.9 10 9H8C8 6.79 9.79 5 12 5C14.21 5 16 6.79 16 9C16 9.88 15.64 10.68 15.07 11.25Z"/></svg>
+    Frequently Asked Questions
+  </div>
   <h1>Clear <em>answers.</em></h1>
   <p class="hero-sub">Everything you need to know about working with Z-One — pricing, tech stack, 3D WebGL workflows, and project timelines.</p>
 </header>

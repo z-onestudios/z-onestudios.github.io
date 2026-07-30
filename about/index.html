@@ -65,8 +65,8 @@ footer p{font-size:13px;color:#888}
 <body>
 <div class="cursor" id="cur"></div>
 <div class="mobile-nav" id="mobileNav">
-  <a href="/" onclick="closeMobile()">Home</a>
   <a href="/about/" onclick="closeMobile()">About</a>
+  <a href="/#work" onclick="closeMobile()">Work</a>
   <a href="/case-studies/" onclick="closeMobile()">Case Studies</a>
   <a href="/journal/" onclick="closeMobile()">Journal</a>
   <a href="/faq/" onclick="closeMobile()">FAQ</a>
@@ -75,19 +75,22 @@ footer p{font-size:13px;color:#888}
 <nav id="nav" aria-label="Main Navigation">
   <a href="/" class="logo">Z<span style="color:var(--lime2)">-</span>ONE <span class="logo-dot"></span></a>
   <ul class="nav-links">
-    <li><a href="/">Home</a></li>
     <li><a href="/about/">About</a></li>
+    <li><a href="/#work">Work</a></li>
     <li><a href="/case-studies/">Case Studies</a></li>
     <li><a href="/journal/">Journal</a></li>
     <li><a href="/faq/">FAQ</a></li>
     <li><a href="/#contact" class="nav-cta">Let's talk</a></li>
   </ul>
-  <button class="burger" id="burger" onclick="toggleMobile()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <button class="burger" id="burger" onclick="toggleMobile()" aria-label="Toggle Navigation Menu"><span></span><span></span><span></span></button>
 </nav>
 
 <header class="page-hero">
   <a href="/" class="back-link">← Back to home</a>
-  <div class="hero-tag"><span>🚀</span> Creative Studio & Engineering</div>
+  <div class="hero-tag">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+    Creative Studio & Engineering
+  </div>
   <h1>Building Digital Experiences That <em>Stand Out.</em></h1>
   <p class="hero-sub">We build custom web products, 3D experiences, and modern software for visionary founders worldwide.</p>
 </header>
