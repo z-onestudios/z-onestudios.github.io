@@ -37,7 +37,7 @@ nav.scrolled{border-color:var(--ink)}
 .logo{font-family:'Caveat',cursive;font-size:28px;font-weight:700;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:6px}
 .logo-dot{width:10px;height:10px;background:var(--lime);border:2px solid var(--ink);border-radius:50%;animation:blink 2s ease-in-out infinite;flex-shrink:0}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.nav-links{list-style:none;display:flex;gap:24px;align-items:center}
+.nav-links{list-style:none;display:flex;gap:28px;align-items:center}
 .nav-links a{color:var(--ink2);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.04em;position:relative;transition:color .2s}
 .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--lime2);transition:width .3s}
 .nav-links a:hover{color:var(--ink)}.nav-links a:hover::after{width:100%}
@@ -45,9 +45,12 @@ nav.scrolled{border-color:var(--ink)}
 .nav-cta::after{display:none!important}.nav-cta:hover{transform:translate(-2px,-2px)!important;box-shadow:5px 5px 0 var(--lime2)!important}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:200}
 .burger span{display:block;width:24px;height:2px;background:var(--ink);transition:all .3s}
-.mobile-nav{display:none;position:fixed;inset:0;background:var(--bg);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity .3s}
+.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-nav{display:none;position:fixed;inset:0;background:var(--bg);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity .3s}
 .mobile-nav.open{opacity:1;pointer-events:all}
-.mobile-nav a{font-family:'Caveat',cursive;font-size:36px;font-weight:700;color:var(--ink);text-decoration:none;transition:color .2s}
+.mobile-nav a{font-family:'Caveat',cursive;font-size:42px;font-weight:700;color:var(--ink);text-decoration:none;transition:color .2s}
 .mobile-nav a:hover{color:var(--lime2)}
 @media(max-width:768px){.nav-links{display:none}.burger{display:flex}.mobile-nav{display:flex}}
 
