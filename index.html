@@ -1057,6 +1057,13 @@ document.querySelectorAll('.pcard').forEach((c,i)=>{c.style.transitionDelay=`${i
   const banner = canvas.parentElement;
   if(!canvas || typeof THREE === 'undefined') return;
 
+  // Don't initialize WebGL on search crawlers to prevent GPU/readpixel stalls
+  const isCrawler = /bot|googlebot|crawler|spider|robot|crawling|lighthouse/i.test(navigator.userAgent);
+  if (isCrawler) {
+    canvas.style.display = 'none';
+    return;
+  }
+
   const W = banner.clientWidth, H = banner.clientHeight;
   const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
   renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
