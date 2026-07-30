@@ -3,10 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frequently Asked Questions — Z-ONE</title>
-<meta name="description" content="Clear answers about Z-One web development pricing, 3D WebGL capabilities, tech stack, and startup MVP timelines.">
+<title>FAQ — Z-ONE | Web Development Questions Answered</title>
+<meta name="description" content="Straight answers about Z-One pricing, timelines, tech stack, 3D WebGL capabilities, and what it's like to work with us. No fluff, no sales language.">
+<meta name="keywords" content="web development FAQ, Z-ONE pricing, web development cost India, 3D website cost, Next.js development agency FAQ">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://z-onestudios.github.io/faq/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://z-onestudios.github.io/faq/">
+<meta property="og:title" content="FAQ — Z-ONE | Web Development Questions Answered">
+<meta property="og:description" content="Straight answers about Z-One pricing, timelines, 3D WebGL, and what it's like to actually work with us.">
+<meta property="og:image" content="https://z-onestudios.github.io/assets/og-image.png">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a website cost?","acceptedAnswer":{"@type":"Answer","text":"Most client projects run between ₹40,000–₹3,00,000 depending on scope. A solid marketing site or startup MVP lands around ₹60,000–₹1,20,000. Full 3D/WebGL builds are priced separately. We send a detailed breakdown before anything starts."}},{"@type":"Question","name":"How long does a project take?","acceptedAnswer":{"@type":"Answer","text":"Typical marketing sites take 2–4 weeks. Startup platforms with backend take 4–8 weeks. Complex 3D experiences can take 6–12 weeks. We move fast but never cut corners on quality."}},{"@type":"Question","name":"Do you build 3D websites?","acceptedAnswer":{"@type":"Answer","text":"Yes. We build WebGL and Three.js experiences that run at 60fps in the browser. Real-time 3D product viewers, interactive brand worlds, immersive portfolios — we've shipped all of these."}}]}
+</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -19,45 +29,88 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',sans-serif;overflow-x:hidden;cursor:none}
 @media(hover:hover){.cursor{position:fixed;width:12px;height:12px;background:var(--ink);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .15s,height .15s}.cursor.big{width:36px;height:36px}}
 @media(hover:none){.cursor{display:none}}
-nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:clamp(12px,2vw,16px) var(--pad);z-index:100;background:var(--bg);border-bottom:2px solid transparent;transition:border-color .3s}
-nav.scrolled{border-color:var(--ink)}
+
+/* NAV — identical to index.html */
+nav#nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:clamp(12px,2vw,16px) var(--pad);z-index:100;background:var(--bg);border-bottom:2px solid transparent;transition:border-color .3s}
+nav#nav.scrolled{border-color:var(--ink)}
 .logo{font-family:'Caveat',cursive;font-size:28px;font-weight:700;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:6px}
 .logo-dot{width:10px;height:10px;background:var(--lime);border:2px solid var(--ink);border-radius:50%;animation:blink 2s ease-in-out infinite;flex-shrink:0}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.nav-links{list-style:none;display:flex;gap:24px;align-items:center}
+.nav-links{list-style:none;display:flex;gap:28px;align-items:center}
 .nav-links a{color:var(--ink2);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.04em;position:relative;transition:color .2s}
 .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--lime2);transition:width .3s}
-.nav-links a:hover{color:var(--ink)}.nav-links a:hover::after{width:100%}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{width:100%}
 .nav-cta{background:var(--ink)!important;color:var(--bg)!important;padding:8px 18px;border:2px solid var(--ink);font-size:12px!important;font-weight:600!important;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;box-shadow:3px 3px 0 var(--lime2);transition:all .2s!important;white-space:nowrap}
-.nav-cta::after{display:none!important}.nav-cta:hover{transform:translate(-2px,-2px)!important;box-shadow:5px 5px 0 var(--lime2)!important}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{transform:translate(-2px,-2px)!important;box-shadow:5px 5px 0 var(--lime2)!important}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:200}
 .burger span{display:block;width:24px;height:2px;background:var(--ink);transition:all .3s}
-.mobile-nav{display:none;position:fixed;inset:0;background:var(--bg);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity .3s}
+.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-nav{display:none;position:fixed;inset:0;background:var(--bg);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity .3s}
 .mobile-nav.open{opacity:1;pointer-events:all}
-.mobile-nav a{font-family:'Caveat',cursive;font-size:36px;font-weight:700;color:var(--ink);text-decoration:none}
+.mobile-nav a{font-family:'Caveat',cursive;font-size:42px;font-weight:700;color:var(--ink);text-decoration:none;transition:color .2s}
+.mobile-nav a:hover{color:var(--lime2)}
 @media(max-width:768px){.nav-links{display:none}.burger{display:flex}.mobile-nav{display:flex}}
 
-.page-hero{min-height:50vh;display:flex;flex-direction:column;justify-content:flex-end;padding:calc(var(--pad-y) + 80px) var(--pad) var(--pad-y);background:var(--ink);position:relative;overflow:hidden;border-bottom:2px solid var(--ink)}
+/* PAGE HERO */
+.page-hero{min-height:70vh;display:flex;flex-direction:column;justify-content:flex-end;padding:calc(var(--pad-y) + 80px) var(--pad) var(--pad-y);background:var(--ink);position:relative;overflow:hidden;border-bottom:2px solid var(--ink)}
+.hero-noise{position:absolute;inset:0;opacity:.04;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+.hero-giant{position:absolute;right:var(--pad);bottom:-20px;font-family:'Caveat',cursive;font-size:clamp(160px,22vw,300px);font-weight:700;color:rgba(200,240,96,.06);pointer-events:none;line-height:1;letter-spacing:-.05em}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--lime);border:2px solid var(--lime2);padding:6px 14px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:20px;transform:rotate(-1deg);width:fit-content}
-.page-hero h1{font-family:'Caveat',cursive;font-size:clamp(48px,9vw,110px);font-weight:700;color:var(--bg);line-height:.9;letter-spacing:-.03em;margin-bottom:24px}
+.page-hero h1{font-family:'Caveat',cursive;font-size:clamp(56px,10vw,136px);font-weight:700;color:var(--bg);line-height:.88;letter-spacing:-.03em;margin-bottom:28px}
 .page-hero h1 em{font-style:normal;color:var(--lime)}
-.hero-sub{font-size:16px;color:#aaa;max-width:580px;line-height:1.75}
-.back-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--bg);text-decoration:none;opacity:.6;margin-bottom:32px;transition:opacity .2s}
-.back-link:hover{opacity:1}
+.hero-sub{font-size:16px;color:#999;max-width:520px;line-height:1.75}
 
-.faq-wrap{padding:var(--pad-y) var(--pad);max-width:960px;margin:0 auto}
-.faq-grid-custom{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:28px}
-.faq-card{background:var(--paper);border:2px solid var(--ink);padding:32px;box-shadow:6px 6px 0 var(--ink);position:relative;transition:transform .2s,box-shadow .2s}
-.faq-card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--lime2)}
-.faq-num{font-family:'Caveat',cursive;font-size:42px;font-weight:700;color:var(--lime2);line-height:1;margin-bottom:12px}
-.faq-card h3{font-size:20px;font-weight:700;margin-bottom:14px;line-height:1.3}
-.faq-card p{font-size:15px;color:var(--ink2);line-height:1.8}
+/* MAIN */
+.faq-wrap{max-width:1100px;margin:0 auto;padding:var(--pad-y) var(--pad)}
 
-footer{background:var(--ink);color:var(--bg);padding:clamp(28px,4vw,48px) var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;border-top:2px solid var(--ink)}
+/* INTRO GRID */
+.faq-intro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:start;margin-bottom:clamp(56px,8vw,104px);padding-bottom:clamp(48px,6vw,80px);border-bottom:2px solid var(--ink)}
+@media(max-width:680px){.faq-intro{grid-template-columns:1fr}}
+.faq-intro-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.faq-intro-label::before{content:'';display:inline-block;width:20px;height:2px;background:var(--lime2)}
+.faq-intro h2{font-family:'Caveat',cursive;font-size:clamp(38px,5vw,62px);font-weight:700;line-height:1;margin-bottom:20px}
+.faq-intro p{font-size:15px;color:var(--ink2);line-height:1.85;margin-bottom:16px}
+.faq-cta-link{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);padding:12px 24px;font-size:13px;font-weight:600;text-decoration:none;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--lime2);margin-top:8px;transition:all .2s}
+.faq-cta-link:hover{transform:translate(-3px,-3px);box-shadow:7px 7px 0 var(--lime2)}
+
+/* FAQ CATEGORY */
+.faq-category{margin-bottom:clamp(40px,6vw,72px)}
+.faq-cat-header{display:flex;align-items:center;gap:14px;padding-bottom:18px;border-bottom:2px solid var(--ink);margin-bottom:2px}
+.faq-cat-icon{width:36px;height:36px;background:var(--lime);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.faq-cat-icon svg{width:17px;height:17px;fill:var(--ink)}
+.faq-cat-title{font-family:'Caveat',cursive;font-size:30px;font-weight:700}
+
+/* FAQ ITEM */
+.faq-item{border-bottom:1px solid rgba(15,15,15,.12)}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:22px 0;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:var(--ink);transition:color .2s;line-height:1.4}
+.faq-q:hover{color:var(--lime2)}
+.faq-toggle{width:30px;height:30px;background:var(--paper);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s}
+.faq-toggle svg{width:12px;height:12px;fill:var(--ink);transition:transform .3s}
+.faq-item.open .faq-toggle{background:var(--lime);border-color:var(--lime2)}
+.faq-item.open .faq-toggle svg{transform:rotate(45deg)}
+.faq-a{display:none;padding:2px 0 24px;font-size:15px;color:var(--ink2);line-height:1.9;max-width:720px}
+.faq-a strong{color:var(--ink)}
+.faq-item.open .faq-a{display:block;animation:fadeDown .25s ease}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+
+/* STILL WONDERING */
+.still-section{background:var(--ink);padding:var(--pad-y) var(--pad);display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;border-top:3px solid var(--lime)}
+.still-left h2{font-family:'Caveat',cursive;font-size:clamp(36px,6vw,72px);font-weight:700;color:var(--bg);line-height:1;margin-bottom:12px}
+.still-left p{font-size:15px;color:#888;max-width:400px;line-height:1.7}
+.still-cta{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:var(--ink);padding:16px 36px;font-size:14px;font-weight:700;text-decoration:none;border:2px solid var(--lime2);box-shadow:4px 4px 0 var(--lime2);transition:all .2s;white-space:nowrap}
+.still-cta:hover{transform:translate(-3px,-3px);box-shadow:7px 7px 0 var(--lime2)}
+
+/* FOOTER */
+footer{background:var(--ink);color:var(--bg);padding:clamp(28px,4vw,48px) var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;border-top:1px solid #222}
 .footer-logo{font-family:'Caveat',cursive;font-size:32px;font-weight:700}
-footer p{font-size:13px;color:#888}
+footer p{font-size:13px;color:#666}
 .footer-nav{display:flex;gap:20px;flex-wrap:wrap}
-.footer-nav a{color:#888;text-decoration:none;font-size:13px;transition:color .2s}.footer-nav a:hover{color:var(--lime)}
+.footer-nav a{color:#666;text-decoration:none;font-size:13px;transition:color .2s}.footer-nav a:hover{color:var(--lime)}
+
 .reveal{opacity:0;transform:translateY(24px);transition:all .6s cubic-bezier(.16,1,.3,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 </style>
@@ -86,87 +139,161 @@ footer p{font-size:13px;color:#888}
 </nav>
 
 <header class="page-hero">
-  <a href="/" class="back-link">← Back to home</a>
+  <div class="hero-noise"></div>
+  <div class="hero-giant">FAQ</div>
   <div class="hero-tag">
-    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 19H11V17H13V19ZM15.07 11.25L14.17 12.17C13.45 12.9 13 13.5 13 15H11V14.5C11 13.4 11.45 12.4 12.17 11.67L13.41 10.41C13.78 10.05 14 9.55 14 9C14 7.9 13.1 7 12 7C10.9 7 10 7.9 10 9H8C8 6.79 9.79 5 12 5C14.21 5 16 6.79 16 9C16 9.88 15.64 10.68 15.07 11.25Z"/></svg>
-    Frequently Asked Questions
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+    Common Questions
   </div>
-  <h1>Clear <em>answers.</em></h1>
-  <p class="hero-sub">Everything you need to know about working with Z-One — pricing, tech stack, 3D WebGL workflows, and project timelines.</p>
+  <h1>Everything<br>you want<br>to <em>know.</em></h1>
+  <p class="hero-sub">Straight answers. No sales pitch. If you don't find it here, email us — we'll respond within the day.</p>
 </header>
 
-<main class="faq-wrap">
-  <div class="faq-grid-custom">
-    
-    <div class="faq-card reveal">
-      <div class="faq-num">01</div>
-      <h3>How much does a custom website or WebGL project cost?</h3>
-      <p>Project costs depend on scope, custom 3D requirements, backend architecture, and design complexity. We don't do hourly billing traps — we give you a transparent, fixed-scope proposal before writing a single line of code.</p>
-    </div>
+<main id="main-content">
+<div class="faq-wrap">
 
-    <div class="faq-card reveal">
-      <div class="faq-num" style="color:var(--pink)">02</div>
-      <h3>Are 3D WebGL websites mobile-friendly and fast?</h3>
-      <p>Yes. We optimize all 3D canvas models using Draco compression, geometry instancing, dynamic pixel ratios, and touch controls to guarantee 60fps performance across modern mobile devices.</p>
+  <!-- INTRO -->
+  <div class="faq-intro reveal">
+    <div>
+      <div class="faq-intro-label">The honest version</div>
+      <h2>We answer what clients actually ask.</h2>
+      <p>After dozens of projects, the same questions come up. Here are real answers — not curated marketing responses. We say what things actually cost, how long they actually take, and what working with us is actually like.</p>
+      <a href="mailto:officialz.one10f@gmail.com" class="faq-cta-link">Ask something else →</a>
     </div>
-
-    <div class="faq-card reveal">
-      <div class="faq-num" style="color:var(--blue)">03</div>
-      <h3>Which technologies do you use for web builds?</h3>
-      <p>Our core stack centers around Next.js, React, Three.js, WebGL, Node.js, TypeScript, PostgreSQL, Supabase, and TailwindCSS — chosen specifically for speed, security, and long-term scalability.</p>
+    <div>
+      <p style="font-size:15px;color:var(--ink2);line-height:1.9;margin-bottom:20px">Z-One is a small, senior-only studio. You will never be handed off to a junior. Every line of code, every design decision, every deployment is handled by the same people you spoke with at the start.</p>
+      <p style="font-size:15px;color:var(--ink2);line-height:1.9">We work with startups, indie founders, established businesses, and international clients. Our base is Srinagar, Kashmir. Our work ships globally.</p>
     </div>
-
-    <div class="faq-card reveal">
-      <div class="faq-num" style="color:var(--purple)">04</div>
-      <h3>How fast can Z-One deliver a startup MVP?</h3>
-      <p>Our dedicated MVP sprints take between 4 to 6 weeks from initial scope mapping to production deployment, completely ready for real users and investor pitches.</p>
-    </div>
-
-    <div class="faq-card reveal">
-      <div class="faq-num" style="color:var(--teal)">05</div>
-      <h3>Who owns the codebase and design assets upon completion?</h3>
-      <p>You do. You retain 100% full IP ownership of all design files, source code, database schemas, and server configurations upon final delivery.</p>
-    </div>
-
-    <div class="faq-card reveal">
-      <div class="faq-num" style="color:var(--orange)">06</div>
-      <h3>Do you provide ongoing support after launch?</h3>
-      <p>Yes, we offer retainer plans for ongoing feature expansions, server maintenance, performance audits, and continuous security updates.</p>
-    </div>
-
   </div>
+
+  <!-- PRICING -->
+  <div class="faq-category reveal">
+    <div class="faq-cat-header">
+      <div class="faq-cat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+      <div class="faq-cat-title">Pricing & Budget</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How much does a website cost?<span class="faq-toggle"><svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="2"/><line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="2"/></svg></span></button>
+      <div class="faq-a">Most client projects run between <strong>₹40,000–₹3,00,000</strong> depending on scope. A solid marketing site or startup MVP lands around ₹60,000–₹1,20,000. Full 3D/WebGL builds and enterprise platforms are scoped separately. We always send a detailed line-item breakdown before anything starts — no surprise invoices.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Do you take international clients?<span class="faq-toggle"><svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="2"/><line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="2"/></svg></span></button>
+      <div class="faq-a">Yes. We work with clients across India, the UAE, UK, US, and Europe. Payments accepted in USD, EUR, GBP, and INR via wire transfer or Wise. We're comfortable working across time zones — most client communication happens async with weekly check-ins.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What's your payment structure?<span class="faq-toggle"><svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="2"/><line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="2"/></svg></span></button>
+      <div class="faq-a">Standard structure: <strong>50% upfront</strong> to begin work, 50% on delivery. Larger projects may have milestone-based payments. We don't start without a deposit — this protects both sides and ensures we're both serious about the engagement.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Do you offer ongoing maintenance?<span class="faq-toggle"><svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="2"/><line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="2"/></svg></span></button>
+      <div class="faq-a">Yes. Monthly retainers start at <strong>₹8,000/month</strong> for updates, security patches, and performance monitoring. More involved retainers with ongoing feature development are scoped individually.</div>
+    </div>
+  </div>
+
+  <!-- TIMELINES -->
+  <div class="faq-category reveal">
+    <div class="faq-cat-header">
+      <div class="faq-cat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg></div>
+      <div class="faq-cat-title">Timelines & Process</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How long does a project take?<span class="faq-toggle"><svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="2"/><line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="2"/></svg></span></button>
+      <div class="faq-a">Landing pages: <strong>1–2 weeks</strong>. Marketing sites: <strong>2–4 weeks</strong>. Startup platforms with backend: <strong>4–8 weeks</strong>. Complex 3D/interactive experiences: <strong>6–12 weeks</strong>. Timelines are heavily influenced by how quickly you provide feedback — fast clients ship faster.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What does your process look like?<span class="faq-toggle"><svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="2"/><line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="2"/></svg></span></button>
+      <div class="faq-a">Discovery call → proposal & contract → design direction approval → build → review rounds → launch. We do 2 rounds of revisions per phase. You'll always know exactly where we are — no black holes, no surprise delays.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How do you handle revisions?<span class="faq-toggle"><svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="2"/><line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="2"/></svg></span></button>
+      <div class="faq-a">Two rounds of revisions are included at each stage. Additional rounds are billed at ₹2,000/hour. We document all feedback and show a changelog before implementing — no confusion about what changed and why.</div>
+    </div>
+  </div>
+
+  <!-- TECH -->
+  <div class="faq-category reveal">
+    <div class="faq-cat-header">
+      <div class="faq-cat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg></div>
+      <div class="faq-cat-title">Tech Stack & Capabilities</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What technologies do you use?<span class="faq-toggle"><svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="2"/><line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="2"/></svg></span></button>
+      <div class="faq-a"><strong>Frontend:</strong> Next.js, React, Three.js, WebGL, GSAP, vanilla JS. <strong>Backend:</strong> Node.js, Supabase, PostgreSQL, REST & GraphQL APIs. <strong>Infra:</strong> Vercel, Cloudflare, AWS. We pick the stack that fits the project — not the stack that's trending on Twitter.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Do you build 3D websites?<span class="faq-toggle"><svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="2"/><line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="2"/></svg></span></button>
+      <div class="faq-a">Yes. We build WebGL and Three.js experiences that run at <strong>60fps in the browser</strong>. Real-time 3D product viewers, interactive brand worlds, immersive portfolios — all shipped and live. Performance is non-negotiable: every 3D scene is optimised for mobile.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Can you work with our existing codebase?<span class="faq-toggle"><svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="2"/><line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="2"/></svg></span></button>
+      <div class="faq-a">Yes, with a caveat: we do a <strong>code audit first</strong> (flat fee, credited toward the project if we proceed). If the codebase is beyond reasonable salvaging, we'll tell you directly and propose a rewrite estimate. No sugar-coating.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Do you build mobile apps?<span class="faq-toggle"><svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="2"/><line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="2"/></svg></span></button>
+      <div class="faq-a">We focus on web — but progressive web apps (PWAs) and mobile-first responsive sites are part of everything we build. If you need native iOS/Android, we have trusted partners we can refer you to.</div>
+    </div>
+  </div>
+
+  <!-- WORKING WITH US -->
+  <div class="faq-category reveal">
+    <div class="faq-cat-header">
+      <div class="faq-cat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+      <div class="faq-cat-title">Working With Us</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How do I start a project with you?<span class="faq-toggle"><svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="2"/><line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="2"/></svg></span></button>
+      <div class="faq-a">Email <strong>officialz.one10f@gmail.com</strong> with a brief description of what you're building and your rough budget. We'll respond within 24 hours with initial questions or a call link to go deeper. That's it.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Are you a freelancer or an agency?<span class="faq-toggle"><svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="2"/><line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="2"/></svg></span></button>
+      <div class="faq-a">Neither, exactly. We're a <strong>small specialist studio</strong> — senior practitioners taking on a limited number of projects at a time. Agency-level output without the overhead. Freelancer-level access without the uncertainty.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Do you sign NDAs?<span class="faq-toggle"><svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="2"/><line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="2"/></svg></span></button>
+      <div class="faq-a">Yes. We'll sign your NDA or provide our standard one. Confidentiality is taken seriously — we don't discuss client work publicly without explicit written permission, full stop.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Who owns the code when the project is done?<span class="faq-toggle"><svg viewBox="0 0 12 12"><line x1="6" y1="0" x2="6" y2="12" stroke="currentColor" stroke-width="2"/><line x1="0" y1="6" x2="12" y2="6" stroke="currentColor" stroke-width="2"/></svg></span></button>
+      <div class="faq-a">You do. Full IP transfer on final payment. We retain the right to show the project in our portfolio unless you request otherwise in the contract — a simple clause, no drama.</div>
+    </div>
+  </div>
+
+</div>
 </main>
 
-<section style="padding:var(--pad-y) var(--pad);background:var(--lime);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)">
-  <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px">
-    <div>
-      <div style="font-family:'Caveat',cursive;font-size:44px;font-weight:700;line-height:1;margin-bottom:10px">Have more questions?</div>
-      <div style="font-size:16px;color:var(--ink2)">Drop us a message directly and we'll reply within 24 hours.</div>
-    </div>
-    <a href="mailto:officialz.one10f@gmail.com" style="display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);padding:14px 28px;font-size:14px;font-weight:700;text-decoration:none;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--lime2);transition:all .2s">Start a conversation →</a>
+<section class="still-section">
+  <div class="still-left">
+    <h2>Still wondering?</h2>
+    <p>Send us your question directly. We reply within the day, and we actually answer what you asked — not what we wish you'd asked.</p>
   </div>
+  <a href="mailto:officialz.one10f@gmail.com" class="still-cta">Email us directly →</a>
 </section>
 
 <footer>
   <span class="footer-logo">Z-ONE<span style="color:var(--lime)">.</span></span>
-  <p>© 2025 Z-One. Home to young founders. Srinagar, Kashmir.</p>
-  <nav class="footer-nav" aria-label="Footer Navigation">
+  <p>© 2025 Z-One. Srinagar, Kashmir.</p>
+  <div class="footer-nav" aria-label="Footer Navigation">
     <a href="/">Home</a>
     <a href="/case-studies/">Case Studies</a>
     <a href="/journal/">Journal</a>
-    <a href="/faq/">FAQ</a>
     <a href="/#contact">Contact</a>
-  </nav>
+  </div>
 </footer>
 
 <script>
 const cur=document.getElementById('cur');
-if(cur&&window.matchMedia('(hover:hover)').matches){document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});document.querySelectorAll('a,button,.faq-card').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))})}
+if(cur&&window.matchMedia('(hover:hover)').matches){document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))})}
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
 const burger=document.getElementById('burger');const mobileNav=document.getElementById('mobileNav');
 function toggleMobile(){burger.classList.toggle('open');mobileNav.classList.toggle('open');document.body.style.overflow=mobileNav.classList.contains('open')?'hidden':'';}
 function closeMobile(){burger.classList.remove('open');mobileNav.classList.remove('open');document.body.style.overflow='';}
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen)item.classList.add('open');
+}
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.06});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>

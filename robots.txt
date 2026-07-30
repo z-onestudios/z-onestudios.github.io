@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 
+# Block admin panel from indexing
+Disallow: /admin/
+
+# Crawl delay (optional - be gentle to server)
+Crawl-delay: 10
+
+# Sitemap
 Sitemap: https://z-onestudios.github.io/sitemap.xml

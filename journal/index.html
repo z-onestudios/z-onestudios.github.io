@@ -64,7 +64,7 @@ nav#nav.scrolled{border-color:var(--ink)}
 .article-card h2{font-size:clamp(22px,4vw,36px);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;transition:color .2s}
 .article-card:hover h2{color:var(--lime2)}
 .article-card p{font-size:15px;color:var(--ink2);line-height:1.8;margin-bottom:20px}
-.article-card .read-time{font-family:'Caveat',cursive;font-size:15px;color:var(--ink2);font-weight:600}
+.article-card .read-time{font-family:'Caveat',cursive;font-size:15px;color:var(--ink2);font-weight:600;display:inline-flex;align-items:center;gap:5px}.article-card .read-time::before{content:"";display:inline-block;width:13px;height:13px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233a3a3a'%3E%3Cpath d='M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z'%3E%3C/path%3E%3C/svg%3E") center/contain no-repeat;opacity:.7}
 .article-content{display:none;padding:24px 0 0}
 .article-content.open{display:block}
 .article-content h3{font-size:22px;font-weight:700;margin:32px 0 14px}
@@ -123,7 +123,7 @@ footer p{font-size:13px;color:#888}
     <div class="article-cat"><span class="cat-dot" style="background:var(--purple)"></span>3D Websites / Technical</div>
     <h2>What Is a 3D Website? A Practical Guide to Spatial Web Design</h2>
     <p>You've probably seen them — websites where objects float, rotate, and respond to your mouse. They look expensive. They feel premium. But what's actually happening under the hood? And more importantly — should you build one?</p>
-    <span class="read-time">☕ 8 min read</span>
+    <span class="read-time">8 min read</span>
     <div class="article-content" id="article-1">
       <h3>The short version</h3>
       <p>A 3D website uses your browser's <strong>GPU</strong> to render three-dimensional objects in real-time. The dominant technology is <strong>WebGL</strong>, a JavaScript API that talks directly to your graphics card. Most developers use <strong>Three.js</strong> — a library that wraps WebGL's gnarly low-level code into something human beings can actually work with.</p>
@@ -145,7 +145,7 @@ footer p{font-size:13px;color:#888}
     <div class="article-cat"><span class="cat-dot" style="background:var(--blue)"></span>Web Architecture</div>
     <h2>Why Custom Websites Beat Generic Templates — Every Time</h2>
     <p>We've had this conversation with probably 40 founders at this point. "Why can't I just use Squarespace?" You can. You absolutely can. But here's what you're giving up.</p>
-    <span class="read-time">☕ 6 min read</span>
+    <span class="read-time">6 min read</span>
     <div class="article-content" id="article-2">
       <h3>Templates solve a different problem</h3>
       <p>Website templates are designed for <strong>speed of deployment</strong>, not speed of loading. They ship with dozens of features you'll never use — sliders, mega menus, WooCommerce hooks, social widgets — and every one of those features adds JavaScript to your page. The average WordPress theme loads <strong>2.4MB of JavaScript</strong> before your first meaningful paint.</p>
@@ -165,7 +165,7 @@ footer p{font-size:13px;color:#888}
     <div class="article-cat"><span class="cat-dot" style="background:var(--lime2)"></span>Startups</div>
     <h2>Building Startup MVPs That Actually Get Funded</h2>
     <p>Most MVPs fail for the same reason — they try to be everything from day one. We've shipped MVPs that got funded, and the secret isn't more features. It's fewer features, done with conviction.</p>
-    <span class="read-time">☕ 7 min read</span>
+    <span class="read-time">7 min read</span>
     <div class="article-content" id="article-3">
       <h3>The feature trap</h3>
       <p>Every founder we work with starts with a feature list that's 3x too long. Dashboard. Analytics. Team management. Integrations. Payment tiers. Admin panel. Notifications. The list goes on.</p>
@@ -185,7 +185,7 @@ footer p{font-size:13px;color:#888}
     <div class="article-cat"><span class="cat-dot" style="background:var(--orange)"></span>Performance</div>
     <h2>Why Your Website Is Slow (And How to Fix It)</h2>
     <p>Speed isn't a feature. It's the feature. Every 100ms of added load time costs you 1% in conversions. Here's how we think about web performance at Z-One.</p>
-    <span class="read-time">☕ 5 min read</span>
+    <span class="read-time">5 min read</span>
     <div class="article-content" id="article-4">
       <h3>The usual suspects</h3>
       <p><strong>Unoptimized images</strong> are the number one offender. We've audited sites serving 4MB hero images that could be 80KB WebP files with zero visible quality loss. Always use next-gen formats. Always specify dimensions. Always lazy-load below the fold.</p>
@@ -202,7 +202,7 @@ footer p{font-size:13px;color:#888}
     <div class="article-cat"><span class="cat-dot" style="background:var(--teal)"></span>Process</div>
     <h2>Behind the Build: How We Actually Make Websites</h2>
     <p>People always ask about our process. It's not complicated. It's just disciplined. Here's how a typical Z-One project goes from "hey, I have an idea" to "holy crap, it's live."</p>
-    <span class="read-time">☕ 6 min read</span>
+    <span class="read-time">6 min read</span>
     <div class="article-content" id="article-5">
       <h3>Week 1: Discovery and architecture</h3>
       <p>We don't start in Figma. We start in a shared doc. What problem are we solving? Who's using this? What does success look like in 3 months? We map out the <strong>information architecture</strong> — every page, every user flow, every data relationship — before a single pixel gets designed.</p>
