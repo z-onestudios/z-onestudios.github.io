@@ -32,8 +32,8 @@ img{max-width:100%;height:auto}
 @media(hover:none){.cursor{display:none}}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:clamp(12px,2vw,16px) var(--pad);z-index:100;background:var(--bg);border-bottom:2px solid transparent;transition:border-color .3s}
-nav.scrolled{border-color:var(--ink)}
+nav#nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:clamp(12px,2vw,16px) var(--pad);z-index:100;background:var(--bg);border-bottom:2px solid transparent;transition:border-color .3s}
+nav#nav.scrolled{border-color:var(--ink)}
 .logo{font-family:'Caveat',cursive;font-size:28px;font-weight:700;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:6px}
 .logo-dot{width:10px;height:10px;background:var(--lime);border:2px solid var(--ink);border-radius:50%;animation:blink 2s ease-in-out infinite;flex-shrink:0}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
@@ -342,12 +342,12 @@ footer p{font-size:13px;color:#888}
 <footer>
   <span class="footer-logo">Z-ONE<span style="color:var(--lime)">.</span></span>
   <p>© 2025 Z-One. Home to young founders. Srinagar, Kashmir.</p>
-  <nav class="footer-nav" aria-label="Footer Navigation">
+  <div class="footer-nav" aria-label="Footer Navigation">
     <a href="/">Home</a>
     <a href="/case-studies/">Case Studies</a>
     <a href="/journal/">Journal</a>
     <a href="/#contact">Contact</a>
-  </nav>
+  </div>
 </footer>
 
 <script>
