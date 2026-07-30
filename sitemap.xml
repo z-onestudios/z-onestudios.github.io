@@ -29,13 +29,6 @@
 
   <!-- PRIORITY 0.8: Supporting pages -->
   <url>
-    <loc>https://z-onestudios.github.io/about/</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>https://z-onestudios.github.io/faq/</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
