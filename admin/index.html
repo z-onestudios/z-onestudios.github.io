@@ -452,11 +452,17 @@ const DEFAULT_POSTS = [
   }
 ];
 
-if (!localStorage.getItem(STORE)) {
+const stored = localStorage.getItem(STORE);
+let storedPosts = [];
+try { storedPosts = JSON.parse(stored || '[]'); } catch(e) { storedPosts = []; }
+
+// Seed defaults if empty or never set
+if (!stored || !Array.isArray(storedPosts) || storedPosts.length === 0) {
   localStorage.setItem(STORE, JSON.stringify(DEFAULT_POSTS));
+  storedPosts = DEFAULT_POSTS;
 }
 
-let posts = JSON.parse(localStorage.getItem(STORE));
+let posts = storedPosts;
 let delTarget = null;
 
 function persist() {
