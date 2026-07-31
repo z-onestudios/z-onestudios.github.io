@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin — Z-ONE Studio</title>
 <meta name="robots" content="noindex, nofollow">
+
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+<!-- Security Headers -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:;">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <style>
@@ -387,7 +398,64 @@ function showPanel(name) {
 
 /* ── POSTS DATA ── */
 const STORE = 'zone_journal_posts';
-let posts = JSON.parse(localStorage.getItem(STORE) || '[]');
+const DEFAULT_POSTS = [
+  {
+    id: "post_1",
+    title: "What Is a 3D Website? A Practical Guide to Spatial Web Design",
+    category: "3D & WebGL",
+    readTime: "8 min read",
+    summary: "You've probably seen them — websites where objects float, rotate, and respond to your mouse. They look expensive. They feel premium. But what's actually happening under the hood? And more importantly — should you build one?",
+    content: "<h3>The short version</h3><p>A 3D website uses your browser's <strong>GPU</strong> to render three-dimensional objects in real-time. The dominant technology is <strong>WebGL</strong>, a JavaScript API that talks directly to your graphics card. Most developers use <strong>Three.js</strong> — a library that wraps WebGL's gnarly low-level code into something human beings can actually work with.</p><h3>When 3D makes sense</h3><p>3D websites work brilliantly for <strong>product showcases</strong> where you need the user to inspect something from every angle — think furniture, electronics, or architectural walkthroughs. They also crush it for <strong>brand storytelling</strong>.</p>",
+    status: "published",
+    date: "30 Jul 2026"
+  },
+  {
+    id: "post_2",
+    title: "Why Custom Websites Beat Generic Templates — Every Time",
+    category: "Web Development",
+    readTime: "6 min read",
+    summary: "We've had this conversation with probably 40 founders at this point. \"Why can't I just use Squarespace?\" You can. You absolutely can. But here's what you're giving up.",
+    content: "<h3>Templates solve a different problem</h3><p>Website templates are designed for <strong>speed of deployment</strong>, not speed of loading. They ship with dozens of features you'll never use. A custom-built Next.js site ships exactly what it needs.</p>",
+    status: "published",
+    date: "30 Jul 2026"
+  },
+  {
+    id: "post_3",
+    title: "Building Startup MVPs That Actually Get Funded",
+    category: "Startups",
+    readTime: "7 min read",
+    summary: "Most MVPs fail for the same reason — they try to be everything from day one. We've shipped MVPs that got funded, and the secret isn't more features. It's fewer features, done with conviction.",
+    content: "<h3>The feature trap</h3><p>Every founder we work with starts with a feature list that's 3x too long. Here's what investors actually look at: <strong>Does the core value proposition work?</strong> That's it.</p>",
+    status: "published",
+    date: "30 Jul 2026"
+  },
+  {
+    id: "post_4",
+    title: "Why Your Website Is Slow (And How to Fix It)",
+    category: "Performance",
+    readTime: "5 min read",
+    summary: "Speed isn't a feature. It's the feature. Every 100ms of added load time costs you 1% in conversions. Here's how we think about web performance at Z-One.",
+    content: "<h3>The usual suspects</h3><p><strong>Unoptimized images</strong> are the number one offender. Always use next-gen formats like WebP or AVIF. Specify image width and height to prevent CLS.</p>",
+    status: "published",
+    date: "30 Jul 2026"
+  },
+  {
+    id: "post_5",
+    title: "Behind the Build: How We Actually Make Websites",
+    category: "Engineering",
+    readTime: "6 min read",
+    summary: "People always ask about our process. It's not complicated. It's just disciplined. Here's how a typical Z-One project goes from \"hey, I have an idea\" to \"holy crap, it's live.\"",
+    content: "<h3>Week 1: Discovery and architecture</h3><p>We don't start in Figma. We start in a shared doc mapping out the information architecture.</p>",
+    status: "published",
+    date: "30 Jul 2026"
+  }
+];
+
+if (!localStorage.getItem(STORE)) {
+  localStorage.setItem(STORE, JSON.stringify(DEFAULT_POSTS));
+}
+
+let posts = JSON.parse(localStorage.getItem(STORE));
 let delTarget = null;
 
 function persist() {

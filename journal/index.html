@@ -11,15 +11,30 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Journal — Z-ONE | Thoughts on Web, 3D, and Building Things</title>
-<meta name="description" content="The Z-One engineering journal. Deep thoughts on Three.js, WebGL, startup MVPs, custom web development, and building things that matter.">
+<title>Journal — Z-ONE | Web &amp; 3D Design Articles</title>
+<meta name="description" content="Engineering notes and thoughts on 3D web design, Three.js, custom web development, performance, and startup MVPs from Z-One.">
 <link rel="canonical" href="https://z-onestudios.github.io/journal/">
+
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+<!-- Security Headers -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:;">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://z-onestudios.github.io/journal/">
-<meta property="og:title" content="Journal — Z-ONE | Thoughts on Web, 3D, and Building Things">
-<meta property="og:description" content="The Z-One engineering journal. Deep thoughts on Three.js, WebGL, startup MVPs, and building things that matter.">
+<meta property="og:title" content="Journal — Z-ONE | Web &amp; 3D Design Articles">
+<meta property="og:description" content="Engineering notes and thoughts on 3D web design, Three.js, custom web development, performance, and startup MVPs from Z-One.">
+<meta property="og:image" content="https://z-onestudios.github.io/assets/og-image.png">
 <meta property="twitter:card" content="summary_large_image">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Blog","name":"Z-ONE Journal","url":"https://z-onestudios.github.io/journal/","description":"Articles on 3D web development, Three.js, performance, and startup engineering."}
+</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -249,6 +264,31 @@ footer p{font-size:13px;color:#888}
 </footer>
 
 <script>
+(function loadDynamicJournal() {
+  const STORE = 'zone_journal_posts';
+  const saved = localStorage.getItem(STORE);
+  if (!saved) return;
+  try {
+    const posts = JSON.parse(saved).filter(p => p.status === 'published');
+    if (!posts || !posts.length) return;
+    const container = document.querySelector('.articles-wrap');
+    if (!container) return;
+    
+    container.innerHTML = posts.map((p, idx) => `
+      <article class="article-card reveal visible">
+        <div class="article-cat"><span class="cat-dot" style="background:var(--lime2)"></span>${p.category || 'Engineering'}</div>
+        <h2>${p.title}</h2>
+        <p>${p.summary}</p>
+        <span class="read-time">${p.readTime || '5 min read'}</span>
+        <div class="article-content" id="article-dyn-${idx}">
+          <div>${p.content || '<p>' + p.summary + '</p>'}</div>
+        </div>
+        <div style="margin-top:20px"><button class="read-toggle" onclick="toggleArticle('article-dyn-${idx}',this)">Read Full Article ↓</button></div>
+      </article>
+    `).join('');
+  } catch(e) {}
+})();
+
 const cur=document.getElementById('cur');
 if(cur&&window.matchMedia('(hover:hover)').matches){document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});document.querySelectorAll('a,button,.article-card').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))})}
 const nav=document.getElementById('nav');
