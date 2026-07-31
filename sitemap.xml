@@ -1,35 +1,75 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- PRIORITY 1: Homepage -->
+<?xml version="1.0" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://z-onestudios.github.io/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://z-onestudios.github.io/assets/zone-logo.png</image:loc>
+      <image:title>Z-One Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://z-onestudios.github.io/assets/kashmir-heal.webp</image:loc>
+      <image:title>Kashmir Heal Telemedicine App</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://z-onestudios.github.io/assets/mines.webp</image:loc>
+      <image:title>Mines Probability Game</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://z-onestudios.github.io/assets/apple-haven.webp</image:loc>
+      <image:title>Apple Haven Mountain Cabin Bookings</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://z-onestudios.github.io/assets/jay-portfolio.webp</image:loc>
+      <image:title>Portfolio of Jay</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://z-onestudios.github.io/assets/headshot-paintball.webp</image:loc>
+      <image:title>Headshot Paintball Center</image:title>
+    </image:image>
   </url>
-
-  <!-- PRIORITY 0.9: Core pages -->
   <url>
     <loc>https://z-onestudios.github.io/case-studies/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://z-onestudios.github.io/assets/kashmir-heal.webp</image:loc>
+      <image:title>Kashmir Heal Case Study</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://z-onestudios.github.io/assets/mines.webp</image:loc>
+      <image:title>Mines Interactive Game Case Study</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://z-onestudios.github.io/assets/headshot-paintball.webp</image:loc>
+      <image:title>Headshot Paintball Case Study</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://z-onestudios.github.io/assets/jay-portfolio.webp</image:loc>
+      <image:title>Portfolio of Jay Case Study</image:title>
+    </image:image>
   </url>
-
   <url>
     <loc>https://z-onestudios.github.io/journal/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://z-onestudios.github.io/assets/zone-logo.png</image:loc>
+      <image:title>Z-One Design Journal</image:title>
+    </image:image>
   </url>
-
-  <!-- PRIORITY 0.8: Supporting pages -->
   <url>
     <loc>https://z-onestudios.github.io/faq/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://z-onestudios.github.io/assets/zone-logo.png</image:loc>
+      <image:title>Z-One Agency FAQ</image:title>
+    </image:image>
   </url>
-
 </urlset>
