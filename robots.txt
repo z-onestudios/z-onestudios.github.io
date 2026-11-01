@@ -20,3 +20,4 @@ Allow: /
 Disallow: /admin/
 
 Sitemap: https://z-onestudios.github.io/sitemap.xml
+Sitemap: https://z-onestudios.github.io/sitemap.txt

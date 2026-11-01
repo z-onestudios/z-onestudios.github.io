@@ -569,6 +569,9 @@ section{padding:var(--pad-y) var(--pad)}
 .testi-quote{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
 .testi-quote strong{color:var(--ink);font-style:normal}
 @media(max-width:480px){.testimonials-grid{grid-template-columns:1fr}.testi-card{padding:22px 18px}}
+.translate-btn{display:inline-flex;align-items:center;gap:7px;margin-top:14px;padding:7px 16px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--ink2);border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);cursor:pointer;transition:all .2s cubic-bezier(.34,1.56,.64,1)}
+.translate-btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);color:var(--ink);background:var(--lime)}
+.translate-btn.translated{background:var(--lime);color:var(--ink);border-color:var(--ink)}
 
 /* ── IDPS MAHORE — school green card ── */
 .pcard.school-card{background:#f0f9f0;border:3px solid #1a5c2e;box-shadow:7px 7px 0 #2d8a4e;display:flex;flex-direction:column;transition:all .25s cubic-bezier(.34,1.56,.64,1);overflow:hidden}
@@ -728,7 +731,7 @@ body.js-enabled .reveal.visible{opacity:1;transform:translateY(0)}
     },
     "author": { "@type": "Person", "name": "Jay Rathore" },
     "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-    "reviewBody": "Z-One turned my vision into something that actually blows people away. The portfolio they built for me isn't just a website — it's an experience. Their attention to detail, the animations, the speed — everything is top-notch. Genuinely one of the best web dev teams I've worked with."
+    "reviewBody": "Thankyou Z-One for a beautiful showcase of my work!"
   },
   {
     "@context": "https://schema.org",
@@ -740,7 +743,7 @@ body.js-enabled .reveal.visible{opacity:1;transform:translateY(0)}
     },
     "author": { "@type": "Person", "name": "Mir Haadi" },
     "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-    "reviewBody": "We needed a real estate platform that felt as warm and inviting as our properties. Z-One delivered Apple Haven with a design that perfectly captures the spirit of Kashmir. Professional, responsive, and they actually listen. Highly recommend for any business looking for quality web development."
+    "reviewBody": "Bhai Bhadiya kaam kiya hai! (Translation: Bro, epic work!)"
   }
 ]
 </script>
@@ -1149,9 +1152,9 @@ body.js-enabled .reveal.visible{opacity:1;transform:translateY(0)}
             <div class="testi-name">Jay Rathore</div>
             <div class="testi-role">Developer · Portfolio Client</div>
           </div>
-          <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span>☆<span></span></div>
+          <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span style="color:var(--ink2);opacity:.3">★</span></div>
         </div>
-        <p class="testi-quote">"Thankyou Z-One for a beautiful showcase of my work!"</p>
+        <p class="testi-quote">"Thankyou Z-One for a <strong>beautiful showcase</strong> of my work!"</p>
       </div>
 
       <!-- Mir Haadi (Apple Haven) -->
@@ -1164,8 +1167,14 @@ body.js-enabled .reveal.visible{opacity:1;transform:translateY(0)}
           </div>
           <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
         </div>
-      <p class="testi-quote" id="quote">"Bhai Bhadiya kaam kiya hai!"</p>
-<button class="btn" onclick="var el=document.getElementById('quote'); var t=el.textContent; el.textContent = t.includes('Bhai') ? 'Epic work!' : t">Translate</button>  
+        <p class="testi-quote" id="haadi-quote">"Bhai Bhadiya kaam kiya hai!"</p>
+        <button class="translate-btn" id="translateBtn" onclick="toggleTranslate()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
+          Translate to English
+        </button>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -1334,6 +1343,21 @@ document.querySelectorAll('.pcard').forEach((c,i)=>{c.style.transitionDelay=`${i
   }
   animate();
 })();
+
+// ---- TRANSLATE BUTTON ----
+function toggleTranslate(){
+  const q = document.getElementById('haadi-quote');
+  const btn = document.getElementById('translateBtn');
+  if(q.textContent.includes('Bhai')){
+    q.innerHTML = '"Bro, <strong>epic work!</strong>"';
+    btn.classList.add('translated');
+    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg> Show Original';
+  } else {
+    q.innerHTML = '"Bhai Bhadiya kaam kiya hai!"';
+    btn.classList.remove('translated');
+    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg> Translate to English';
+  }
+}
 </script>
 </body>
 </html>
