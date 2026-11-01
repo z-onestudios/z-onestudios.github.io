@@ -1,0 +1,37 @@
+# Z-One Studios
+
+> Z-One (also known as Z One, Zone, Z-One Studios, Z One Studios) is a web development and 3D design agency based in Srinagar, Kashmir, India.
+
+## About
+Z-One is a small, senior-only web development agency that specializes in building custom websites, immersive 3D web experiences using Three.js and WebGL, and full-stack platforms for startups and businesses. The agency was founded by a team of young developers and designers from Kashmir who handle everything from frontend design to backend infrastructure.
+
+## Services
+- Custom Website Development
+- 3D Website Development (Three.js, WebGL)
+- Startup MVP Development
+- UI/UX Design
+- Full-Stack Web Applications
+- Brand Identity & Design
+
+## Tech Stack
+- Frontend: Next.js, React, TypeScript, Tailwind CSS, Astro
+- 3D & Motion: Three.js, WebGL, GSAP, Framer Motion, Lottie
+- Backend: Node.js, Express, Supabase, GraphQL
+- Database: PostgreSQL, MongoDB, Redis
+- Deployment: Vercel, Render, Docker
+
+## Projects
+- Kashmir Heal: Healthcare telemedicine platform for Kashmir
+- Mines: Vintage-style marketplace and probability game
+- Apple Haven: Mountain cabin bookings and real estate in Kashmir
+- Portfolio of Jay: Personal developer portfolio
+- Headshot Paintball: Sports and entertainment booking platform
+- IDPS Mahore (idpsmahore.net): Completed institutional website
+
+## Contact
+- Email: officialz.one10f@gmail.com
+- Phone: +91 8825031589
+- Location: Srinagar, Kashmir, India
+- Website: https://z-onestudios.github.io/
+- Instagram: https://www.instagram.com/z.0ne.official/
+- GitHub: https://github.com/z-onestudios

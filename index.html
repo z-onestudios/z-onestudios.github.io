@@ -15,7 +15,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Z-ONE — Web Development & 3D Agency | Kashmir</title>
 <meta name="description" content="Z-One is a web development agency in Srinagar, Kashmir. We build custom websites, 3D WebGL experiences, and startup platforms.">
-<meta name="keywords" content="web development agency Kashmir, web development Srinagar, 3D website development India, Next.js agency India, startup MVP development, WebGL Three.js agency, custom website design Kashmir">
+<meta name="keywords" content="Z-One, Z One, Zone, Z-One Studios, z-one studios, z-one studious, web development agency Kashmir, website development Kashmir, website dev agency in kashmir, web development Srinagar, 3D website development, 3D website development India, Next.js agency India, startup MVP development, WebGL Three.js agency, custom website design Kashmir, best web developer Kashmir, website design company Srinagar, web agency India">
 <meta name="author" content="Z-ONE Studio">
 <meta name="robots" content="index, follow">
 <meta name="google-site-verification" content="cGrW-6oLmGt7ZKbFWg5x5CF0UlOHtvHTjpIkX5UkXFM">
@@ -552,6 +552,40 @@ section{padding:var(--pad-y) var(--pad)}
 .bug-link{display:inline-flex;align-items:center;gap:6px;background:var(--ink);color:var(--bg);padding:8px 16px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--lime2);transition:all .2s;white-space:nowrap;margin-left:auto}
 .bug-link:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--lime2)}
 
+/* TESTIMONIALS */
+.testimonials-section{background:var(--paper);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);position:relative;overflow:hidden}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:clamp(14px,2.5vw,24px)}
+.testi-card{background:var(--paper);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--lime2);padding:28px 24px;transition:all .25s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden}
+.testi-card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--lime2)}
+.testi-card::before{content:'\201C';position:absolute;top:-8px;left:14px;font-family:'Caveat',cursive;font-size:100px;font-weight:700;color:var(--lime);opacity:.18;line-height:1;pointer-events:none}
+.testi-top{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:16px;border-bottom:2px dashed var(--ink)}
+.testi-avatar{width:56px;height:56px;border-radius:50%;border:3px solid var(--ink);overflow:hidden;flex-shrink:0;box-shadow:3px 3px 0 var(--ink);display:flex;align-items:center;justify-content:center;background:var(--lime);font-family:'Caveat',cursive;font-size:24px;font-weight:700;color:var(--ink)}
+.testi-avatar img{width:100%;height:100%;object-fit:cover}
+.testi-info{flex:1}
+.testi-name{font-family:'Caveat',cursive;font-size:22px;font-weight:700;color:var(--ink);line-height:1.1}
+.testi-role{font-size:12px;color:var(--ink2);font-weight:500;margin-top:2px}
+.testi-stars{display:flex;gap:3px;margin-left:auto}
+.testi-stars span{font-size:18px;color:var(--lime2)}
+.testi-quote{font-size:14px;color:var(--ink2);line-height:1.75;font-style:italic}
+.testi-quote strong{color:var(--ink);font-style:normal}
+@media(max-width:480px){.testimonials-grid{grid-template-columns:1fr}.testi-card{padding:22px 18px}}
+
+/* ── IDPS MAHORE — school green card ── */
+.pcard.school-card{background:#f0f9f0;border:3px solid #1a5c2e;box-shadow:7px 7px 0 #2d8a4e;display:flex;flex-direction:column;transition:all .25s cubic-bezier(.34,1.56,.64,1);overflow:hidden}
+.pcard.school-card:hover{transform:translate(-4px,-4px);box-shadow:11px 11px 0 #1a5c2e}
+.school-top{padding:20px 24px;border-bottom:3px solid #1a5c2e;display:flex;align-items:center;gap:14px;background:#d4edda}
+.school-logo{width:52px;height:52px;border-radius:50%;border:3px solid #1a5c2e;overflow:hidden;flex-shrink:0;box-shadow:3px 3px 0 #1a5c2e;background:#fff}
+.school-logo img{width:100%;height:100%;object-fit:cover}
+.school-title-block{flex:1}
+.school-body{padding:22px 24px;flex:1;display:flex;flex-direction:column}
+.pcard.school-card .pdesc{color:#2d5a3e}
+.pcard.school-card .pname{color:#0d3b1e}
+.pcard.school-card .spill{color:#1a5c2e;background:#e8f5e9;border-color:#81c784}
+.pcard.school-card .spill:hover{background:#c8e6c9;border-color:#1a5c2e}
+.pcard.school-card .plink{background:#2d8a4e;color:#fff;border-color:#1a5c2e;box-shadow:3px 3px 0 #1a5c2e}
+.pcard.school-card .plink:hover{box-shadow:5px 5px 0 #1a5c2e}
+.ptag-school{background:#2d8a4e;color:#fff;border-color:#1a5c2e;box-shadow:2px 2px 0 #1a5c2e}
+
 /* CONTACT */
 .contact-section{background:var(--bg)}
 .contact-box{background:var(--ink);border:2px solid var(--ink);padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:clamp(28px,5vw,64px);align-items:center;position:relative;overflow:hidden}
@@ -656,6 +690,60 @@ body.js-enabled .reveal.visible{opacity:1;transform:translateY(0)}
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://z-onestudios.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Case Studies",
+      "item": "https://z-onestudios.github.io/case-studies/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Journal",
+      "item": "https://z-onestudios.github.io/journal/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "ProfessionalService",
+      "name": "Z-One Studios",
+      "url": "https://z-onestudios.github.io/"
+    },
+    "author": { "@type": "Person", "name": "Jay Rathore" },
+    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+    "reviewBody": "Z-One turned my vision into something that actually blows people away. The portfolio they built for me isn't just a website — it's an experience. Their attention to detail, the animations, the speed — everything is top-notch. Genuinely one of the best web dev teams I've worked with."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "ProfessionalService",
+      "name": "Z-One Studios",
+      "url": "https://z-onestudios.github.io/"
+    },
+    "author": { "@type": "Person", "name": "Mir Haadi" },
+    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+    "reviewBody": "We needed a real estate platform that felt as warm and inviting as our properties. Z-One delivered Apple Haven with a design that perfectly captures the spirit of Kashmir. Professional, responsive, and they actually listen. Highly recommend for any business looking for quality web development."
+  }
+]
+</script>
 </head>
 <body class="js-enabled">
 <script>
@@ -702,7 +790,7 @@ body.js-enabled .reveal.visible{opacity:1;transform:translateY(0)}
 
   <div class="hero-badge"><span class="badge-dot"></span>Web Dev Agency · Home to Young Founders</div>
   <h1 class="hero-h1">We Build<br><span class="outline">The</span> <span class="highlight">Web</span><br>Different.</h1>
-  <p class="hero-sub">Z-One is a web development agency in Srinagar, Kashmir, building custom websites, 3D websites, and startup platforms for founders and businesses worldwide.</p>
+  <p class="hero-sub">Z-One Studios is a web development agency based in Srinagar, Kashmir. We craft custom websites, immersive 3D web experiences, and launch-ready startup platforms for founders and businesses across India and beyond.</p>
   <div class="hero-ctas">
     <a href="#work" class="btn btn-dark">See our work →</a>
     <a href="#contact" class="btn btn-light">Start a project</a>
@@ -844,7 +932,7 @@ body.js-enabled .reveal.visible{opacity:1;transform:translateY(0)}
       <div class="section-eyebrow">Real Projects</div>
       <h2 class="section-h2" style="margin-bottom:0">Our Work.</h2>
     </div>
-    <span class="proj-count">5 live / 2024–25</span>
+    <span class="proj-count">6 projects / 2024–25</span>
   </div>
   <div class="projects-grid">
 
@@ -993,6 +1081,34 @@ body.js-enabled .reveal.visible{opacity:1;transform:translateY(0)}
       </div>
     </div>
 
+    <!-- ══ IDPS MAHORE — school green card ══ -->
+    <div class="pcard school-card">
+      <div class="school-top">
+        <div class="school-logo"><img src="assets/idps-mahore.png" alt="IDPS Mahore" width="600" height="600"></div>
+        <div class="school-title-block">
+          <div style="font-family:'Caveat',cursive;font-size:24px;font-weight:700;color:#0d3b1e;line-height:1">IDPS Mahore</div>
+          <div style="font-family:'Caveat',cursive;font-size:13px;color:#2d8a4e;font-weight:600">Education · School Website 🎓</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;margin-left:auto">
+          <span class="completed-badge"><span class="completed-dot"></span>Completed</span>
+          <span style="font-family:'Caveat',cursive;font-size:13px;color:#2d8a4e;font-weight:600">2025</span>
+        </div>
+      </div>
+      <div class="school-body">
+        <div style="background:#e8f5e9;border:2px dashed #2d8a4e;padding:12px 14px;margin-bottom:18px;font-family:'Caveat',cursive;font-size:14px;color:#1a5c2e;line-height:1.5">
+          🎓 "A clean, professional school website for International Delhi Public School, Mahore — built to inform students, parents, and staff."
+        </div>
+        <div class="pname" style="color:#0d3b1e">International Delhi<br>Public School.</div>
+        <p class="pdesc" style="color:#2d5a3e">A complete school website built from scratch for IDPS Mahore. Informative, fast, and designed for easy navigation by students, parents, and faculty. Clean layout with all the essentials — admissions, academics, and contact — front and center.</p>
+        <div class="stack" style="margin-top:auto">
+          <span class="spill"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="3" fill="#E44D26"/><text x="5" y="22" font-size="11" fill="white" font-weight="bold" font-family="monospace">H5</text></svg>HTML5</span>
+          <span class="spill"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="2" fill="#264de4"/><text x="4" y="22" font-size="12" fill="white" font-weight="bold" font-family="monospace">CS</text></svg>CSS3</span>
+          <span class="spill"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="3" fill="#F7DF1E"/><text x="4" y="22" font-size="13" fill="#000" font-weight="bold" font-family="monospace">JS</text></svg>JavaScript</span>
+        </div>
+        <a href="https://idpsmahore.net" target="_blank" class="plink" style="margin-top:16px">Visit IDPS Mahore school website ↗</a>
+      </div>
+    </div>
+
   </div>
 
   <!-- MORE PROJECTS CTA -->
@@ -1008,7 +1124,7 @@ body.js-enabled .reveal.visible{opacity:1;transform:translateY(0)}
 
 <!-- KASHMIR WEB DEV SUMMARY PARAGRAPH -->
 <div style="background:var(--paper);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:28px var(--pad);text-align:center;">
-  <p style="font-size:15px;color:var(--ink2);line-height:1.7;max-width:760px;margin:0 auto;">Looking for website development in Kashmir? Z-One is a Srinagar-based web development agency offering custom website design, 3D websites, e-commerce platforms, and startup MVP development. Built with Next.js, React, and Three.js. Z-One is sometimes searched as 'Z One' or 'Zone' because of the hyphen. These searches all refer to the same web development and 3D design agency.</p>
+  <p style="font-size:15px;color:var(--ink2);line-height:1.7;max-width:760px;margin:0 auto;">Looking for a website dev agency in Kashmir? Z-One Studios — also known as Z One, Zone, or Z-One — is a Srinagar-based web development agency offering custom website design, 3D website development, e-commerce platforms, and startup MVP builds. We work with Next.js, React, Three.js, and WebGL to deliver websites that stand out. Whether you search for Z-One Studios, Z One Studios, or simply Zone — you'll find the same passionate team of young developers building the web different.</p>
 </div>
 
 <!-- BUG BANNER -->
@@ -1018,7 +1134,40 @@ body.js-enabled .reveal.visible{opacity:1;transform:translateY(0)}
   <a href="mailto:bugs@z-one.dev" class="bug-link">Report a Bug →</a>
 </div>
 
+<!-- TESTIMONIALS -->
+<section class="testimonials-section reveal" id="testimonials">
+  <div style="padding:var(--pad-y) var(--pad)">
+    <div class="section-eyebrow">What People Say</div>
+    <h2 class="section-h2">Client <span style="background:var(--lime);padding:0 8px;display:inline-block;transform:rotate(-1deg)">Love.</span></h2>
+    <div class="testimonials-grid">
 
+      <!-- Jay Rathore -->
+      <div class="testi-card">
+        <div class="testi-top">
+          <div class="testi-avatar"><img src="assets/jay-rathore.png" alt="Jay Rathore"></div>
+          <div class="testi-info">
+            <div class="testi-name">Jay Rathore</div>
+            <div class="testi-role">Developer · Portfolio Client</div>
+          </div>
+          <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span>☆<span></span></div>
+        </div>
+        <p class="testi-quote">"Thankyou Z-One for a beautiful showcase of my work!"</p>
+      </div>
+
+      <!-- Mir Haadi (Apple Haven) -->
+      <div class="testi-card">
+        <div class="testi-top">
+          <div class="testi-avatar">MH</div>
+          <div class="testi-info">
+            <div class="testi-name">Mir Haadi</div>
+            <div class="testi-role">Founder · Apple Haven</div>
+          </div>
+          <div class="testi-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        </div>
+      <p class="testi-quote" id="quote">"Bhai Bhadiya kaam kiya hai!"</p>
+<button class="btn" onclick="var el=document.getElementById('quote'); var t=el.textContent; el.textContent = t.includes('Bhai') ? 'Epic work!' : t">Translate</button>  
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section class="contact-section reveal" id="contact">
