@@ -384,7 +384,9 @@ const ALLOWED = ['officialz.one10f@gmail.com'];
 
 function handleCredential(resp) {
   const payload = JSON.parse(atob(resp.credential.split('.')[1]));
-  if (!ALLOWED.includes(payload.email)) {
+  const email = (payload.email || '').toLowerCase();
+  const allowedSet = ALLOWED.map(e => e.toLowerCase());
+  if (!allowedSet.includes(email)) {
     document.getElementById('loginWrap').style.display = 'none';
     document.getElementById('deniedWrap').style.display = 'flex';
     return;
